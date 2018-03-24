@@ -1,0 +1,21 @@
+.dropdown__filters{
+    .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle{
+        border-color: $white;
+    }
+
+    .mat-radio-checked .mat-radio-inner-circle{
+        background-color: $white;
+    }
+}
+
+
+.nav__filter{
+    .mat-radio-label-content{
+        color: $primary-color;
+        font-weight: 500;
+    }
+
+    .mat-radio-outer-circle{
+        border-color: $primary-color;
+    }
+}

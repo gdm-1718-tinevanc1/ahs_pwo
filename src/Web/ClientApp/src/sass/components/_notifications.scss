@@ -1,0 +1,39 @@
+/// @group notification
+.notif{
+    height: 50px;
+    float: right;
+    width: 70%;
+    color: #ffffff;
+    padding: 10px;
+    margin-bottom: 20px;
+    margin-right: -40px;
+    text-transform: uppercase;
+    line-height: 30px;
+
+    &::after{
+        content:'';
+        display:block;
+        clear: both;
+    }
+}
+
+/// @group notification
+/// @name notif-success
+.notif--succes{
+    @extend .notif;
+    background-color: #B7BF13;  
+}
+
+/// @group notification
+/// @name notif-error
+.notif--error{
+    @extend .notif;
+    background-color: #AF0000;
+}
+
+/// @group notification
+/// @name notif-warning
+.notif--warning{
+    @extend .notif;
+    background-color: #EE9900;
+}

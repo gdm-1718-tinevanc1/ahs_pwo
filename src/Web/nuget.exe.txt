@@ -1,0 +1,300 @@
+  GET https://api.nuget.org/v3-flatcontainer/system.threading.overlapped/4.0.1-r
+c2-24027/system.threading.overlapped.4.0.1-rc2-24027.nupkg
+  OK https://api.nuget.org/v3-flatcontainer/system.threading.overlapped/4.0.1-rc
+2-24027/system.threading.overlapped.4.0.1-rc2-24027.nupkg 580ms
+  GET https://api.nuget.org/v3-flatcontainer/system.reflection.emit.lightweight/
+4.0.1-rc2-24027/system.reflection.emit.lightweight.4.0.1-rc2-24027.nupkg
+  OK https://api.nuget.org/v3-flatcontainer/system.reflection.emit.lightweight/4
+.0.1-rc2-24027/system.reflection.emit.lightweight.4.0.1-rc2-24027.nupkg 601ms
+  GET https://api.nuget.org/v3-flatcontainer/system.security.principal.windows/4
+.0.0-rc2-24027/system.security.principal.windows.4.0.0-rc2-24027.nupkg
+  OK https://api.nuget.org/v3-flatcontainer/system.security.principal.windows/4.
+0.0-rc2-24027/system.security.principal.windows.4.0.0-rc2-24027.nupkg 588ms
+  GET https://api.nuget.org/v3-flatcontainer/runtime.native.system.net.security/
+4.0.1-rc2-24027/runtime.native.system.net.security.4.0.1-rc2-24027.nupkg
+  OK https://api.nuget.org/v3-flatcontainer/runtime.native.system.net.security/4
+.0.1-rc2-24027/runtime.native.system.net.security.4.0.1-rc2-24027.nupkg 578ms
+  GET https://api.nuget.org/v3-flatcontainer/system.security.claims/4.0.1-rc2-24
+027/system.security.claims.4.0.1-rc2-24027.nupkg
+  OK https://api.nuget.org/v3-flatcontainer/system.security.claims/4.0.1-rc2-240
+27/system.security.claims.4.0.1-rc2-24027.nupkg 833ms
+  GET https://api.nuget.org/v3-flatcontainer/system.security.cryptography.openss
+l/4.0.0-rc2-24027/system.security.cryptography.openssl.4.0.0-rc2-24027.nupkg
+  OK https://api.nuget.org/v3-flatcontainer/system.security.cryptography.openssl
+/4.0.0-rc2-24027/system.security.cryptography.openssl.4.0.0-rc2-24027.nupkg 219m
+s
+  GET https://api.nuget.org/v3-flatcontainer/system.security.principal/4.0.1-rc2
+-24027/system.security.principal.4.0.1-rc2-24027.nupkg
+  OK https://api.nuget.org/v3-flatcontainer/system.security.principal/4.0.1-rc2-
+24027/system.security.principal.4.0.1-rc2-24027.nupkg 1008ms
+  GET https://api.nuget.org/v3-flatcontainer/system.collections.specialized/4.0.
+1-rc2-24027/system.collections.specialized.4.0.1-rc2-24027.nupkg
+  OK https://api.nuget.org/v3-flatcontainer/system.collections.specialized/4.0.1
+-rc2-24027/system.collections.specialized.4.0.1-rc2-24027.nupkg 573ms
+  GET https://api.nuget.org/v3-flatcontainer/runtime.native.system.security.cryp
+tography/4.0.0-rc2-24027/runtime.native.system.security.cryptography.4.0.0-rc2-2
+4027.nupkg
+  OK https://api.nuget.org/v3-flatcontainer/runtime.native.system.security.crypt
+ography/4.0.0-rc2-24027/runtime.native.system.security.cryptography.4.0.0-rc2-24
+027.nupkg 593ms
+  GET https://api.nuget.org/v3-flatcontainer/runtime.native.system.net.http/4.0.
+1-rc2-24027/runtime.native.system.net.http.4.0.1-rc2-24027.nupkg
+  OK https://api.nuget.org/v3-flatcontainer/runtime.native.system.net.http/4.0.1
+-rc2-24027/runtime.native.system.net.http.4.0.1-rc2-24027.nupkg 570ms
+  GET https://api.nuget.org/v3-flatcontainer/system.security.cryptography.cng/4.
+1.0-rc2-24027/system.security.cryptography.cng.4.1.0-rc2-24027.nupkg
+  OK https://api.nuget.org/v3-flatcontainer/system.security.cryptography.cng/4.1
+.0-rc2-24027/system.security.cryptography.cng.4.1.0-rc2-24027.nupkg 576ms
+  GET https://api.nuget.org/v3-flatcontainer/system.security.cryptography.csp/4.
+0.0-rc2-24027/system.security.cryptography.csp.4.0.0-rc2-24027.nupkg
+  OK https://api.nuget.org/v3-flatcontainer/system.security.cryptography.csp/4.0
+.0-rc2-24027/system.security.cryptography.csp.4.0.0-rc2-24027.nupkg 576ms
+  GET https://api.nuget.org/v3-flatcontainer/microsoft.codeanalysis.analyzers/in
+dex.json
+  OK https://api.nuget.org/v3-flatcontainer/microsoft.codeanalysis.analyzers/ind
+ex.json 1005ms
+  GET https://api.nuget.org/v3-flatcontainer/system.diagnostics.fileversioninfo/
+index.json
+  OK https://api.nuget.org/v3-flatcontainer/system.diagnostics.fileversioninfo/i
+ndex.json 569ms
+  GET https://api.nuget.org/v3-flatcontainer/system.diagnostics.stacktrace/index
+.json
+  OK https://api.nuget.org/v3-flatcontainer/system.diagnostics.stacktrace/index.
+json 611ms
+  GET https://api.nuget.org/v3-flatcontainer/system.text.encoding.codepages/inde
+x.json
+  OK https://api.nuget.org/v3-flatcontainer/system.text.encoding.codepages/index
+.json 581ms
+  GET https://api.nuget.org/v3-flatcontainer/system.xml.xmldocument/index.json
+  OK https://api.nuget.org/v3-flatcontainer/system.xml.xmldocument/index.json 57
+6ms
+  GET https://api.nuget.org/v3-flatcontainer/system.xml.xpath.xdocument/index.js
+on
+  OK https://api.nuget.org/v3-flatcontainer/system.xml.xpath.xdocument/index.jso
+n 348ms
+  GET https://api.nuget.org/v3-flatcontainer/system.runtime.interopservices.pinv
+oke/index.json
+  OK https://api.nuget.org/v3-flatcontainer/system.runtime.interopservices.pinvo
+ke/index.json 619ms
+  GET https://api.nuget.org/v3-flatcontainer/microsoft.netcore.dotnethost/index.
+json
+  OK https://api.nuget.org/v3-flatcontainer/microsoft.netcore.dotnethost/index.j
+son 593ms
+  GET https://api.nuget.org/v3-flatcontainer/microsoft.netcore.targets/index.jso
+n
+  OK https://api.nuget.org/v3-flatcontainer/microsoft.netcore.targets/index.json
+ 572ms
+  GET https://api.nuget.org/v3-flatcontainer/microsoft.netcore.runtime.coreclr/i
+ndex.json
+  OK https://api.nuget.org/v3-flatcontainer/microsoft.netcore.runtime.coreclr/in
+dex.json 1103ms
+  GET https://api.nuget.org/v3-flatcontainer/microsoft.netcore.runtime.native/in
+dex.json
+  OK https://api.nuget.org/v3-flatcontainer/microsoft.netcore.runtime.native/ind
+ex.json 594ms
+  GET https://api.nuget.org/v3-flatcontainer/runtime.native.system.io.compressio
+n/index.json
+  OK https://api.nuget.org/v3-flatcontainer/runtime.native.system.io.compression
+/index.json 612ms
+  GET https://api.nuget.org/v3-flatcontainer/system.collections.nongeneric/index
+.json
+  OK https://api.nuget.org/v3-flatcontainer/system.collections.nongeneric/index.
+json 576ms
+  GET https://api.nuget.org/v3-flatcontainer/microsoft.codeanalysis.analyzers/1.
+1.0/microsoft.codeanalysis.analyzers.1.1.0.nupkg
+  OK https://api.nuget.org/v3-flatcontainer/microsoft.codeanalysis.analyzers/1.1
+.0/microsoft.codeanalysis.analyzers.1.1.0.nupkg 571ms
+  GET https://api.nuget.org/v3-flatcontainer/system.diagnostics.fileversioninfo/
+4.0.0-rc2-24027/system.diagnostics.fileversioninfo.4.0.0-rc2-24027.nupkg
+  OK https://api.nuget.org/v3-flatcontainer/system.diagnostics.fileversioninfo/4
+.0.0-rc2-24027/system.diagnostics.fileversioninfo.4.0.0-rc2-24027.nupkg 590ms
+  GET https://api.nuget.org/v3-flatcontainer/system.diagnostics.stacktrace/4.0.1
+-rc2-24027/system.diagnostics.stacktrace.4.0.1-rc2-24027.nupkg
+  OK https://api.nuget.org/v3-flatcontainer/system.diagnostics.stacktrace/4.0.1-
+rc2-24027/system.diagnostics.stacktrace.4.0.1-rc2-24027.nupkg 569ms
+  GET https://api.nuget.org/v3-flatcontainer/system.text.encoding.codepages/4.0.
+1-rc2-24027/system.text.encoding.codepages.4.0.1-rc2-24027.nupkg
+  OK https://api.nuget.org/v3-flatcontainer/system.text.encoding.codepages/4.0.1
+-rc2-24027/system.text.encoding.codepages.4.0.1-rc2-24027.nupkg 218ms
+  GET https://api.nuget.org/v3-flatcontainer/system.xml.xmldocument/4.0.1-rc2-24
+027/system.xml.xmldocument.4.0.1-rc2-24027.nupkg
+  OK https://api.nuget.org/v3-flatcontainer/system.xml.xmldocument/4.0.1-rc2-240
+27/system.xml.xmldocument.4.0.1-rc2-24027.nupkg 575ms
+  GET https://api.nuget.org/v3-flatcontainer/system.xml.xpath.xdocument/4.0.1-rc
+2-24027/system.xml.xpath.xdocument.4.0.1-rc2-24027.nupkg
+  OK https://api.nuget.org/v3-flatcontainer/system.xml.xpath.xdocument/4.0.1-rc2
+-24027/system.xml.xpath.xdocument.4.0.1-rc2-24027.nupkg 576ms
+  GET https://api.nuget.org/v3-flatcontainer/system.runtime.interopservices.pinv
+oke/4.0.0-rc2-24027/system.runtime.interopservices.pinvoke.4.0.0-rc2-24027.nupkg
+
+  OK https://api.nuget.org/v3-flatcontainer/system.runtime.interopservices.pinvo
+ke/4.0.0-rc2-24027/system.runtime.interopservices.pinvoke.4.0.0-rc2-24027.nupkg
+577ms
+  GET https://api.nuget.org/v3-flatcontainer/microsoft.netcore.dotnethost/1.0.1-
+rc2-002702-00/microsoft.netcore.dotnethost.1.0.1-rc2-002702-00.nupkg
+  OK https://api.nuget.org/v3-flatcontainer/microsoft.netcore.dotnethost/1.0.1-r
+c2-002702-00/microsoft.netcore.dotnethost.1.0.1-rc2-002702-00.nupkg 1025ms
+  GET https://api.nuget.org/v3-flatcontainer/microsoft.netcore.targets/1.0.1-rc2
+-24027/microsoft.netcore.targets.1.0.1-rc2-24027.nupkg
+  OK https://api.nuget.org/v3-flatcontainer/microsoft.netcore.targets/1.0.1-rc2-
+24027/microsoft.netcore.targets.1.0.1-rc2-24027.nupkg 698ms
+  GET https://api.nuget.org/v3-flatcontainer/microsoft.netcore.runtime.coreclr/1
+.0.2-rc2-24027/microsoft.netcore.runtime.coreclr.1.0.2-rc2-24027.nupkg
+  OK https://api.nuget.org/v3-flatcontainer/microsoft.netcore.runtime.coreclr/1.
+0.2-rc2-24027/microsoft.netcore.runtime.coreclr.1.0.2-rc2-24027.nupkg 722ms
+  GET https://api.nuget.org/v3-flatcontainer/microsoft.netcore.runtime.native/1.
+0.2-rc2-24027/microsoft.netcore.runtime.native.1.0.2-rc2-24027.nupkg
+  OK https://api.nuget.org/v3-flatcontainer/microsoft.netcore.runtime.native/1.0
+.2-rc2-24027/microsoft.netcore.runtime.native.1.0.2-rc2-24027.nupkg 586ms
+  GET https://api.nuget.org/v3-flatcontainer/runtime.native.system.io.compressio
+n/4.1.0-rc2-24027/runtime.native.system.io.compression.4.1.0-rc2-24027.nupkg
+  OK https://api.nuget.org/v3-flatcontainer/runtime.native.system.io.compression
+/4.1.0-rc2-24027/runtime.native.system.io.compression.4.1.0-rc2-24027.nupkg 610m
+s
+  GET https://api.nuget.org/v3-flatcontainer/system.collections.nongeneric/4.0.1
+-rc2-24027/system.collections.nongeneric.4.0.1-rc2-24027.nupkg
+  OK https://api.nuget.org/v3-flatcontainer/system.collections.nongeneric/4.0.1-
+rc2-24027/system.collections.nongeneric.4.0.1-rc2-24027.nupkg 573ms
+  GET https://api.nuget.org/v3-flatcontainer/system.xml.xpath/index.json
+  OK https://api.nuget.org/v3-flatcontainer/system.xml.xpath/index.json 574ms
+  GET https://api.nuget.org/v3-flatcontainer/microsoft.netcore.windows.apisets/i
+ndex.json
+  OK https://api.nuget.org/v3-flatcontainer/microsoft.netcore.windows.apisets/in
+dex.json 864ms
+  GET https://api.nuget.org/v3-flatcontainer/system.xml.xpath/4.0.1-rc2-24027/sy
+stem.xml.xpath.4.0.1-rc2-24027.nupkg
+  OK https://api.nuget.org/v3-flatcontainer/system.xml.xpath/4.0.1-rc2-24027/sys
+tem.xml.xpath.4.0.1-rc2-24027.nupkg 586ms
+  GET https://api.nuget.org/v3-flatcontainer/microsoft.netcore.windows.apisets/1
+.0.1-rc2-24027/microsoft.netcore.windows.apisets.1.0.1-rc2-24027.nupkg
+  OK https://api.nuget.org/v3-flatcontainer/microsoft.netcore.windows.apisets/1.
+0.1-rc2-24027/microsoft.netcore.windows.apisets.1.0.1-rc2-24027.nupkg 220ms
+Installing Microsoft.NETCore.App 1.0.0-rc2-3002702.
+Installing System.ComponentModel 4.0.1-rc2-24027.
+Installing System.Threading.Thread 4.0.0-rc2-24027.
+Installing System.Threading.ThreadPool 4.0.10-rc2-24027.
+Installing System.Linq.Parallel 4.0.1-rc2-24027.
+Installing System.Security.Cryptography.Primitives 4.0.0-rc2-24027.
+Installing System.Threading.Tasks.Dataflow 4.6.0-rc2-24027.
+Installing System.Threading.Tasks.Extensions 4.0.0-rc2-24027.
+Installing System.Threading.Tasks.Parallel 4.0.1-rc2-24027.
+Installing System.Resources.Reader 4.0.0-rc2-24027.
+Installing System.Runtime.Loader 4.0.0-rc2-24027.
+Installing System.ComponentModel.Annotations 4.1.0-rc2-24027.
+Installing System.Diagnostics.DiagnosticSource 4.0.0-rc2-24027.
+Installing System.Linq.Queryable 4.0.1-rc2-24027.
+Installing System.Reflection.TypeExtensions 4.1.0-rc2-24027.
+Installing System.Buffers 4.0.0-rc2-24027.
+Installing System.Collections.Immutable 1.2.0-rc2-24027.
+Installing System.Numerics.Vectors 4.1.1-rc2-24027.
+Installing System.Dynamic.Runtime 4.0.11-rc2-24027.
+Installing System.Reflection.DispatchProxy 4.0.1-rc2-24027.
+Installing System.Linq.Expressions 4.0.11-rc2-24027.
+Installing Microsoft.CSharp 4.0.1-rc2-24027.
+Installing Microsoft.VisualBasic 10.0.1-rc2-24027.
+Installing System.Diagnostics.Process 4.1.0-rc2-24027.
+Installing System.Globalization.Extensions 4.0.1-rc2-24027.
+Installing System.IO.FileSystem.Watcher 4.0.0-rc2-24027.
+Installing System.IO.MemoryMappedFiles 4.0.0-rc2-24027.
+Installing System.IO.UnmanagedMemoryStream 4.0.1-rc2-24027.
+Installing System.Net.NameResolution 4.0.0-rc2-24027.
+Installing System.Net.Security 4.0.0-rc2-24027.
+Installing System.Reflection.Metadata 1.3.0-rc2-24027.
+Installing System.Security.Cryptography.Algorithms 4.1.0-rc2-24027.
+Installing System.Security.Cryptography.Encoding 4.0.0-rc2-24027.
+Installing System.Security.Cryptography.X509Certificates 4.1.0-rc2-24027.
+Installing System.Net.Requests 4.0.11-rc2-24027.
+Installing Microsoft.NETCore.DotNetHostPolicy 1.0.1-rc2-002702-00.
+Installing System.Net.WebHeaderCollection 4.0.1-rc2-24027.
+Installing Microsoft.CodeAnalysis.CSharp 1.3.0-beta1-20160429-01.
+Installing Microsoft.CodeAnalysis.VisualBasic 1.3.0-beta1-20160429-01.
+Installing NETStandard.Library 1.5.0-rc2-24027.
+Installing System.Runtime 4.1.0-rc2-24027.
+Installing System.Runtime.Handles 4.0.1-rc2-24027.
+Installing System.Collections 4.0.11-rc2-24027.
+Installing System.Diagnostics.Debug 4.0.11-rc2-24027.
+Installing System.Linq 4.1.0-rc2-24027.
+Installing System.Runtime.Extensions 4.1.0-rc2-24027.
+Installing System.Threading 4.0.11-rc2-24027.
+Installing System.Diagnostics.Tracing 4.1.0-rc2-24027.
+Installing System.Resources.ResourceManager 4.0.1-rc2-24027.
+Installing System.Collections.Concurrent 4.0.12-rc2-24027.
+Installing System.Threading.Tasks 4.0.11-rc2-24027.
+Installing System.Globalization 4.0.11-rc2-24027.
+Installing System.IO 4.1.0-rc2-24027.
+Installing System.Text.Encoding 4.0.11-rc2-24027.
+Installing System.Reflection 4.1.0-rc2-24027.
+Installing System.Reflection.Extensions 4.0.1-rc2-24027.
+Installing System.Text.RegularExpressions 4.0.12-rc2-24027.
+Installing System.ObjectModel 4.0.12-rc2-24027.
+Installing System.Reflection.Primitives 4.0.1-rc2-24027.
+Installing System.Reflection.Emit 4.0.1-rc2-24027.
+Installing System.Reflection.Emit.ILGeneration 4.0.1-rc2-24027.
+Installing System.Reflection.Emit.Lightweight 4.0.1-rc2-24027.
+Installing System.Runtime.InteropServices 4.1.0-rc2-24027.
+Installing Microsoft.Win32.Primitives 4.0.1-rc2-24027.
+Installing System.IO.FileSystem 4.0.1-rc2-24027.
+Installing System.IO.FileSystem.Primitives 4.0.1-rc2-24027.
+Installing System.Text.Encoding.Extensions 4.0.11-rc2-24027.
+Installing Microsoft.Win32.Registry 4.0.0-rc2-24027.
+Installing runtime.native.System 4.0.0-rc2-24027.
+Installing System.Threading.Overlapped 4.0.1-rc2-24027.
+Installing System.Net.Primitives 4.0.11-rc2-24027.
+Installing System.Security.Principal.Windows 4.0.0-rc2-24027.
+Installing runtime.native.System.Net.Security 4.0.1-rc2-24027.
+Installing System.Security.Claims 4.0.1-rc2-24027.
+Installing System.Security.Principal 4.0.1-rc2-24027.
+Installing System.Security.Cryptography.OpenSsl 4.0.0-rc2-24027.
+Installing runtime.native.System.Security.Cryptography 4.0.0-rc2-24027.
+Installing System.Globalization.Calendars 4.0.1-rc2-24027.
+Installing System.Runtime.Numerics 4.0.1-rc2-24027.
+Installing runtime.native.System.Net.Http 4.0.1-rc2-24027.
+Installing System.Security.Cryptography.Cng 4.1.0-rc2-24027.
+Installing System.Security.Cryptography.Csp 4.0.0-rc2-24027.
+Installing System.Net.Http 4.0.1-rc2-24027.
+Installing Microsoft.NETCore.DotNetHostResolver 1.0.1-rc2-002702-00.
+Installing System.Collections.Specialized 4.0.1-rc2-24027.
+Installing Microsoft.CodeAnalysis.Common 1.3.0-beta1-20160429-01.
+Installing System.AppContext 4.1.0-rc2-24027.
+Installing System.Console 4.0.0-rc2-24027.
+Installing System.Diagnostics.Tools 4.0.1-rc2-24027.
+Installing System.IO.Compression.ZipFile 4.0.1-rc2-24027.
+Installing System.Net.Sockets 4.1.0-rc2-24027.
+Installing System.Runtime.InteropServices.RuntimeInformation 4.0.0-rc2-24027.
+Installing System.Threading.Timer 4.0.1-rc2-24027.
+Installing System.Xml.ReaderWriter 4.0.11-rc2-24027.
+Installing System.Xml.XDocument 4.0.11-rc2-24027.
+Installing Microsoft.NETCore.Platforms 1.0.1-rc2-24027.
+Installing System.IO.Compression 4.1.0-rc2-24027.
+Installing Microsoft.NETCore.Runtime 1.0.2-rc2-24027.
+Installing System.Runtime.InteropServices.PInvoke 4.0.0-rc2-24027.
+Installing Microsoft.NETCore.DotNetHost 1.0.1-rc2-002702-00.
+Installing System.Collections.NonGeneric 4.0.1-rc2-24027.
+Installing Microsoft.CodeAnalysis.Analyzers 1.1.0.
+Installing System.Diagnostics.FileVersionInfo 4.0.0-rc2-24027.
+Installing System.Diagnostics.StackTrace 4.0.1-rc2-24027.
+Installing System.Text.Encoding.CodePages 4.0.1-rc2-24027.
+Installing System.Xml.XmlDocument 4.0.1-rc2-24027.
+Installing System.Xml.XPath.XDocument 4.0.1-rc2-24027.
+Installing Microsoft.NETCore.Targets 1.0.1-rc2-24027.
+Installing runtime.native.System.IO.Compression 4.1.0-rc2-24027.
+Installing Microsoft.NETCore.Runtime.Native 1.0.2-rc2-24027.
+Installing Microsoft.NETCore.Runtime.CoreCLR 1.0.2-rc2-24027.
+Installing System.Xml.XPath 4.0.1-rc2-24027.
+Installing Microsoft.NETCore.Windows.ApiSets 1.0.1-rc2-24027.
+Committing restore...
+Writing lock file to disk. Path: C:\Users\darksalim\Desktop\hwapp\project.lock.j
+son
+C:\Users\darksalim\Desktop\hwapp\project.json
+Restore completed in 1559528ms.
+
+NuGet Config files used:
+    C:\Users\darksalim\AppData\Roaming\NuGet\NuGet.Config
+
+Feeds used:
+    https://api.nuget.org/v3/index.json
+
+Installed:
+    113 package(s) to C:\Users\darksalim\Desktop\hwapp\project.json
+
+C:\Users\darksalim\Desktop\hwapp>

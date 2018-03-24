@@ -1,0 +1,57 @@
+<div class="table">
+  <h5>Status projecten</h5>
+  <div class="search-container">
+      <i class="fa fa-search"></i><input [(ngModel)]="searchText" placeholder="{{'Zoeken' | translate}}" class="search">
+      <button mat-button class="button--down" [ngClass]="{'button--active': dropdownExpaned}" (click)="dropdownExpaned = !dropdownExpaned"><i class="fa fa-angle-down"></i></button>
+      <div class="dropdown__filters" *ngIf="dropdownExpaned">
+        <ul>
+          <mat-radio-group name="status" [(ngModel)]="statusValue">
+            <mat-radio-button  *ngFor="let status of states" [value]="status.id"> {{ status.name |translate}}</mat-radio-button>
+             <mat-radio-button  [value]="null"> {{ 'Alle' |translate}}</mat-radio-button>
+          </mat-radio-group>  
+        </ul>
+      </div>
+    </div>
+  <hr class="clear">
+  <table class="table table-lg" style="overflow-x:auto;">
+    <thead>
+        <tr>
+          <th scope="col">{{'Project'| translate}}</th>
+          <th scope="col">{{'Beheerder'| translate}}</th>
+          <th scope="col">{{'Status'| translate}}</th>
+          <th scope="col">{{'Laatst gewijzigd'| translate}}</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let project of projects | filterByStatus: statusValue | searchBy: searchText | paginate: { itemsPerPage: 4, currentPage: p }">
+          <td><a routerLink="/project/{{ project.id }}"><span *ngIf="project.shorttitle">{{project.shorttitle.nl.value}}</span>
+            <span *ngIf="!project.shorttitle" class="bold">{{'Nieuw project' | translate}}</span>
+           </a></td>
+          <td><span *ngFor="let profile of project.profiles"> {{profile.profile.userName}}</span> </td>
+          <td>{{project.status.name}}</td>
+          <td>{{project.updatedAt | date}}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table class="table table-sm" style="overflow-x:auto;">
+        <thead>
+            <tr>
+              <th scope="col">{{'Project'| translate}}</th>
+              <th scope="col">{{'Beheerder'| translate}}</th>
+              <th scope="col">{{'Status'| translate}}</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let project of projects | filterByStatus: statusValue | searchBy: searchText | paginate: { itemsPerPage: 4, currentPage: p }">
+              <td><a routerLink="/project/{{ project.id }}"><span *ngIf="project.shorttitle">{{project.shorttitle.nl.value}}</span>
+                <span *ngIf="!project.shorttitle" class="bold">{{'Nieuw project' | translate}}</span>
+               </a></td>
+              <td><span *ngFor="let profile of project.profiles"> {{profile.profile.userName}}</span> </td>
+              <td>{{project.status.name}}</td>
+            </tr>
+          </tbody>
+        </table>
+    <hr>
+    <pagination-controls (pageChange)="p = $event" previousLabel="" nextLabel="" maxSize="6"></pagination-controls>
+</div>

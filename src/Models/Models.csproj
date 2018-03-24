@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AspNet.Security.OAuth.Validation" Version="2.0.0-*" />
+    <PackageReference Include="Microsoft.SharePoint" Version="1.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="OpenIddict" Version="2.0.0-*" />
+    <PackageReference Include="OpenIddict.EntityFrameworkCore" Version="2.0.0-*" />
+    <PackageReference Include="OpenIddict.Mvc" Version="2.0.0-*" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity" Version="2.0.0-*" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="2.0.0-*" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="2.0.0" />    <PackageReference Include="System.Data.SqlClient" Version="4.4.0" />
+  </ItemGroup>
+
+</Project>

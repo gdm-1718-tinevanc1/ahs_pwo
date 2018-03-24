@@ -1,0 +1,28 @@
+.block__validate{
+    .mat-checkbox-inner-container{
+        max-width: 15px;
+        max-height: 15px;
+
+        .mat-checkbox-frame{
+            border-color: $white;
+         }
+     }   
+     
+     .mat-checkbox-layout .mat-checkbox-label{
+        text-transform: lowercase;
+        font-weight: normal;
+    }
+}
+
+.input .block__validate{
+    width: calc(90% + 33px);
+    margin-top: -18px;
+}
+.select .block__validate{
+    width: 90%;
+    margin-top: -10px;
+}
+
+.textarea .block__validate{
+    width: calc(90% + 33px);
+}

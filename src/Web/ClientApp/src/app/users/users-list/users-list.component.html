@@ -1,0 +1,35 @@
+<div class="user__section">
+  <h4>{{'Gebruikers' | translate}}</h4>
+  <div class="search-container">
+    <i class="fa fa-search"></i><input placeholder="{{'Zoeken' | translate}}" [(ngModel)]="searchText" class="search">
+    <button mat-button class="button--down" [ngClass]="{'button--active': dropdownExpaned}" (click)="dropdownExpaned = !dropdownExpaned"><i class="fa fa-angle-down"></i></button>
+    <div class="dropdown__filters" *ngIf="dropdownExpaned">
+      <ul>
+        <li><mat-checkbox [(ngModel)]="filterSelectRol1" [disabled]="filterDisabledCheckboxs">{{'Administrator' | translate}}</mat-checkbox></li>
+        <li><mat-checkbox [(ngModel)]="filterSelectRol2" [disabled]="filterDisabledCheckboxs">{{'Projectleider' | translate}}</mat-checkbox></li> 
+        <li><mat-checkbox [(ngModel)]="filterSelectAll" (change)='toggleFilterAllCheckbox()'>{{'Alle' | translate}}</mat-checkbox></li>
+      </ul>
+    </div>
+  </div>
+    <table class="table">
+        <thead>
+          <tr>
+            <th scope="col">{{'Naam' | translate}}</th>
+            <th scope="col">{{'Rollen' | translate}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let profile of profiles | searchBy: searchText | paginate: { itemsPerPage: 10, currentPage: p }; let i = index">
+            <td>{{profile.firstName}} {{profile.lastName}}</td>
+            <td><ul class="rols">
+              <li><mat-checkbox [(ngModel)]="selectRol1[i]" [disabled]="disabledCheckboxs[i]">{{'Administrator' | translate}}</mat-checkbox></li>
+              <li><mat-checkbox [(ngModel)]="selectRol2[i]" [disabled]="disabledCheckboxs[i]">{{'Projectleider' | translate}}</mat-checkbox></li>
+              <li><mat-checkbox [(ngModel)]="selectAll[i]" (change)='toggleAllCheckbox(i)'>{{'Alle' | translate}}</mat-checkbox></li>
+            </ul></td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <pagination-controls (pageChange)="p = $event" previousLabel="" nextLabel="" maxSize="6"></pagination-controls>
+</div>
+

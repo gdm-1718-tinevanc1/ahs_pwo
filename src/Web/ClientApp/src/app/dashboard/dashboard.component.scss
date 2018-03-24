@@ -1,0 +1,64 @@
+@import '../../styles.scss';
+
+.dashboard{
+    margin-top: 40px;
+    margin-right: 40px;
+
+    .mat-card{
+        height: 70px;
+        background-color: $secondary-color;
+        color: $white;
+        padding-top: 0px;
+        text-transform: uppercase;
+
+        &:focus {
+            outline: 0;
+        }
+    }
+}
+
+
+
+
+@media (min-width: 830px) {
+    .dashboard .mat-card{
+        .fa {
+            color: $primary-color;
+            position: relative;
+            margin-left: -25px;
+            font-size:6rem;
+            margin-top: 12px;
+            padding-left:1px;
+    
+            &.fa-user{
+                margin-top:11px;
+                font-size: 6.5rem;
+            }
+        }
+        p{
+            margin-top: -50px;
+            margin-left: 25%;
+            padding-top: 3px;
+    
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard{
+        margin-top: 0;
+        margin-right: 0;
+        .dashboard__items{
+            padding-top: 10px;
+        }
+        .mat-card{
+            height: 30px;
+        }
+        .fa {
+            float: left;
+            padding-top: 2px;
+            margin-right: 10px;
+        }
+    }
+    
+}

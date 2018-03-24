@@ -1,0 +1,51 @@
+@import '../../../styles.scss';
+
+.dashboard__todo{
+    h5 {
+        text-transform: uppercase;
+        font-weight: bold;
+    }
+    ul {
+        padding-left: 30px;
+        li{
+            list-style: none;
+            margin-left: -20px;
+            color: $primary-color;
+
+            .mat-checkbox-frame{
+                border-color: $secondary-color !important;
+            }
+        }
+    }
+
+    .todo__input{
+        height: 30px;
+        padding-top:5px;
+    }
+
+    .icon{
+        margin-top: 14px;
+        margin-left: -20px;
+        position: absolute;
+        color: $secondary-color;
+        cursor: pointer;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    /* Dashboard */
+    .dashboard__todo{
+        .todo__input{
+            .mat-form-field-wrapper{
+                width: 100px;
+            }
+        }
+    }
+
+    .task__select{
+        width: 100%;
+    }
+}

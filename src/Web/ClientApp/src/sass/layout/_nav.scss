@@ -1,0 +1,9 @@
+.nav__filter{
+    mat-checkbox .mat-checkbox-label{
+        color: $primary-color;
+        font-weight: 500;
+    }
+    mat-checkbox .mat-checkbox-frame{
+        border-color: $primary-color;
+    }
+}

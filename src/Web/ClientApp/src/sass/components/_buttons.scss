@@ -1,0 +1,114 @@
+.mat-button.button--save{
+    background-color: $secondary-color;
+    margin-top: 20px;
+    border-radius: 0;
+    outline: none;
+
+    .mat-button-wrapper{
+        color: $white;
+    }
+}
+
+
+.mat-button.button--validate{
+    background-color: $white;
+    border: 1px solid $secondary-color;
+    min-width: 30px;
+    height: 30px;
+    line-height: 15px;
+    padding: 0;
+    .mat-button-wrapper{
+        color: $secondary-color;
+    }
+
+    &:hover{
+        background-color: $secondary-color;
+        .mat-button-wrapper{
+            color: $white;
+        }
+        .mat-button-focus-overlay{
+            background: none;
+        }
+    }
+}
+
+
+@media (min-width: 768px) {
+    .mat-button.button--validate.validateQuill {
+        top: 207px;
+    }
+}
+
+/** .button--upload **/
+mat-accordion.button--upload{
+    margin-top: 20px;
+}
+
+.button--upload{
+    mat-expansion-panel{
+        padding: 0;
+        margin-bottom: 20px;
+        mat-expansion-panel-header{
+            padding: 0;
+            padding-right: 20px;
+            margin: 0;
+            line-height: 48px;
+            font-size: 1.5rem;
+            text-transform: uppercase;
+        }
+        .fa.icon{
+            background-color: $primary-color;
+            color: $white;
+            padding: 10px;
+            margin: 0 10px 0 0;
+            height: 48px !important;
+            line-height: 30px;
+        }
+    }
+    .mat-expanded .mat-expansion-panel-header{
+            height: 48px !important;
+            border-bottom: 1px solid $primary-color;
+    }
+    
+}
+
+.settings{
+    .mat-expanded .mat-expansion-panel-content{
+        background-color: $primary-color;
+        margin-top: -5px;
+        padding-top: 10px;
+    }
+    .mat-radio-label-content{
+        color: $white;
+    }
+
+    .mat-radio-outer-circle{
+        border-color: $white;
+    }
+ 
+    .mat-accent.mat-radio-checked {
+        .mat-radio-outer-circle {
+            border-color: $white;
+        }
+        .mat-radio-inner-circle {
+            background: $white;
+        }
+    }
+    .button--upload{
+        .mat-button{
+            background-color: $white;
+            border-radius: 0px;
+            // padding: 10px;
+        }
+    }
+}
+
+
+
+@media (min-width: 768px) {
+    .button--upload{
+        mat-expansion-panel{
+             width: 400px;
+        }
+    }
+}

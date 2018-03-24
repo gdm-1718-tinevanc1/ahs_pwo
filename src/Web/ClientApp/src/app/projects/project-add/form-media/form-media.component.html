@@ -1,0 +1,62 @@
+<div class="form project__section">
+    <form class="page__form" enctype="multipart/form-data">
+      <div class="message">
+        <div *ngIf="message.succes" class="notif--succes"> <i class="fa fa-check"></i> {{message.succes}}</div>
+        <div *ngIf="message.error" class="notif--error"> <i class="fa fa-times"></i> {{message.error}}</div>
+        <div *ngIf="message.warning" class="notif--warning"> <i class="fa fa-exclamation-triangle"></i> {{message.warning}}</div>
+        <div class="clear"></div>
+      </div>
+
+    <mat-accordion class="button--upload">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+              <mat-panel-title>
+                <i class="fa fa-picture-o icon" aria-hidden="true"></i>
+                    {{'Project icoon' |translate}}
+                </mat-panel-title>
+          </mat-expansion-panel-header>
+            <img *ngIf="iconSrc.image" class="form__image" [src]="iconSrc.image" />
+          <button for="icon" mat-button (click)="iconFileInput.click()">{{'Uploaden' |translate}}</button>
+          <button mat-button (click)="cancel('iconSrc')">{{'Annuleer' |translate}}</button>
+          <input class="hidden" name="icon" type="file" placeholder="Gebruikersafbeelding" #iconFileInput (change)="previewImage($event, 'iconSrc')"/> <br>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion class="button--upload">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+              <mat-panel-title>
+                <i class="fa fa-picture-o icon" aria-hidden="true"></i>
+                    {{'Project beeld' |translate}}
+                </mat-panel-title>
+          </mat-expansion-panel-header>
+          <img *ngIf="imageSrc.image" class="form__image" [src]="imageSrc.image" />
+          <button for="image" mat-button (click)="imgFileInput.click()">{{'Uploaden' |translate}}</button>
+          <button mat-button (click)="cancel('imageSrc')">{{'Annuleer' |translate}}</button>
+          <input class="hidden" name="image" type="file" placeholder="Gebruikersafbeelding" #imgFileInput (change)="previewImage($event, 'imageSrc')"/> <br>
+        </mat-expansion-panel>
+    </mat-accordion>
+
+    <mat-accordion class="button--upload">
+        <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title>
+                  <i class="fa fa-picture-o icon" aria-hidden="true"></i>
+                  {{'Extra afbeelding' |translate}}
+              </mat-panel-title>
+            </mat-expansion-panel-header>
+            <div class="row">
+                <div *ngFor="let image of extImageSrc; let i = index" class="col-sm-4">
+                    <img class="form__image" [src]="image.image" />
+                </div>
+            </div>
+            <button for="extra_image" mat-button (click)="extImgFileInput.click()">{{'Uploaden' |translate}}</button>
+            <button mat-button (click)="cancel('extImageSrc')">{{'Annuleer' |translate}}</button>
+            <input class="hidden" name="extra_image" type="file" multiple="multiple" placeholder="Gebruikersafbeelding" #extImgFileInput (change)="previewImage($event, 'extImageSrc')"/> <br>
+         </mat-expansion-panel>
+    </mat-accordion>
+
+    <button [disabled]='!(isAdmin || editable_by.includes(AuthenticatedUser))' class="button--save" (click)="save()" mat-button>{{'Opslaan' |translate}}</button>
+    </form>
+</div>
+

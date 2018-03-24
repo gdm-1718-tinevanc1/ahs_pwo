@@ -1,0 +1,42 @@
+
+@import '../../../styles.scss';
+
+.user__section{
+    background-color: $white;
+    margin: 50px 20px 30px -7%;
+    padding: 10px;
+
+    h4{
+        text-transform: uppercase;
+        color: $secondary-color;
+        float: left;
+    }
+
+    thead{
+        text-transform: uppercase;
+    }
+}
+
+.rols{
+    padding: 0;
+    li{
+    display: inline-block;
+    padding-right: 50px;
+    &:last{
+        padding-right: 10px;
+        }
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .user__section{
+        margin: 0;
+        padding:0;
+        width: 100%;
+        background: none;
+        background-color: none;
+    }
+    
+}

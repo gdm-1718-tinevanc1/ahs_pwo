@@ -1,0 +1,18 @@
+@import '../../../styles.scss';
+
+.header__notification{
+    color: $secondary-color;
+    float: right;
+    margin-top: -25px;
+}
+
+@media (max-width: 768px) {
+    table{
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+    } 
+    th {
+        font-size: 1rem;
+    }
+}

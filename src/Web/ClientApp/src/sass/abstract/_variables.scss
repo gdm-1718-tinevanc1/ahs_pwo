@@ -1,0 +1,56 @@
+/* Variables */
+$mat-pwo-blue: (
+  50 : #d6f8ff,
+  100 : #8aebff,
+  200 : #52e2ff,
+  300 : #0ad6ff,
+  400 : #00CAE5,
+  500 : #00aacc,
+  600 : #0090ad,
+  700 : #00778f,
+  800 : #005d70,
+  900 : #004452,
+  A100 : #ccf6ff,
+  A200 : #66e5ff,
+  A400 : #00d4ff,
+  A700 : #00bfe6,
+  contrast: (
+      50 : #000000,
+      100 : #000000,
+      200 : #000000,
+      300 : #000000,
+      400 : #000000,
+      500 : #ffffff,
+      600 : #ffffff,
+      700 : #ffffff,
+      800 : #ffffff,
+      900 : #ffffff,
+      A100 : #000000,
+      A200 : #000000,
+      A400 : #000000,
+      A700 : #000000,
+  )
+);
+
+$primary-color: #00AACC;
+$secondary-color: #00CAE5;
+$background-grey: #F3F2F6;
+
+$background-secondnav: #DEDDDF;
+
+$error-color: #AF0000;
+$succes-color: #B7BF13;
+$warning-color: #EE9900;
+
+$white: #ffffff;
+$black: #000000;
+
+
+
+
+$pwo-material-primary-palette: mat-palette($mat-pwo-blue);
+$pwo-material-accent-palette:  mat-palette($mat-pwo-blue);
+// $pwo-material-warn-palette:    mat-palette($warning-color);
+
+// Create the theme object (a Sass map containing all of the palettes).
+$pwo-material-theme: mat-light-theme($pwo-material-primary-palette, $pwo-material-accent-palette);

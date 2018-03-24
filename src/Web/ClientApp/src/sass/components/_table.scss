@@ -1,0 +1,30 @@
+.table{
+    margin: 20px 0 40px;
+    padding: 10px;
+    background-color: $white;
+    th{
+        text-transform: uppercase;
+        border: 1px;
+    }
+    h5{
+        text-transform: uppercase;
+        color: $secondary-color;
+        font-weight: bold;
+    }
+}
+
+
+
+@media (max-width: 768px) {
+    .table-lg{
+        display: none;
+    }
+}
+
+
+
+@media (min-width: 768px) {
+    .table-sm{
+        display: none;
+    }
+}

@@ -1,0 +1,32 @@
+@charset "UTF-8";
+
+@import '~@angular/material/theming';
+
+//imports
+@import 'abstract/variables';
+@include angular-material-theme($pwo-material-theme);
+
+
+
+@import 'base/base';
+@import 'base/core';
+@import 'layout/forms';
+@import 'layout/nav';
+@import 'layout/paginations';
+
+@import 'components/validate';
+@import 'components/table';
+@import 'components/search';
+@import 'components/buttons';
+@import 'components/notifications';
+@import 'components/links';
+@import 'components/filters';
+
+@import 'layout/container';
+
+
+
+@media (max-width: 768px) {
+
+}
+

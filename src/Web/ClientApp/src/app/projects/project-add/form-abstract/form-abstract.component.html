@@ -1,0 +1,90 @@
+<div class="form project__section">
+    <form class="page__form" enctype="multipart/form-data">
+      <div class="message">
+        <div *ngIf="message.succes" class="notif--succes"> <i class="fa fa-check"></i> {{message.succes}}</div>
+        <div *ngIf="message.error" class="notif--error"> <i class="fa fa-times"></i> {{message.error}}</div>
+        <div *ngIf="message.warning" class="notif--warning"> <i class="fa fa-exclamation-triangle"></i> {{message.warning}}</div>
+        <div class="clear"></div>
+      </div>
+      
+    <div *ngIf="language === 'nl';else eng">
+      <h5>{{'Nederlands'| translate}}</h5>
+      <h4>{{'Abstract' | translate}}</h4>
+      <quill-editor [disabled]='!(isAdmin || editable_by.abstract.includes(AuthenticatedUser))' class="quill-editor" [style]="{height: '200px'}" name="abstract" *ngIf="projectCredentials.abstract && projectCredentials.abstract.nl" [(ngModel)]="projectCredentials.abstract.nl.value"><div quill-editor-toolbar>
+          <span class="ql-formats">
+              <select class="ql-size" [title]="'Size'">
+                <option selected></option>
+                <option value="small"></option>
+                <option value="large"></option>
+                <option value="huge"></option>
+              </select>
+            </span>
+          <span class="ql-formats">
+              <button class="ql-bold">Bold</button>
+              <button class="ql-italic">Italic</button>
+              <button class="ql-underline">Underline</button>
+              <button class="ql-strike">Strike</button>
+          </span>
+          <span class="ql-formats">
+            <select class="ql-align" [title]="'Aligment'">
+              <option selected></option>
+              <option value="center"></option>
+              <option value="right"></option>
+              <option value="justify"></option>
+            </select>
+          </span>
+          <span class="ql-formats">
+              <button class="ql-list" value="ordered"></button>
+              <button class="ql-list" value="bullet"></button>
+            </span>
+        </div><div quill-editor-element></div></quill-editor>
+        <button mat-button (click)="isExpandedValidate.abstract = !isExpandedValidate.abstract" class="button--validate validateQuill"><i class="fa fa-check" aria-hidden="true"></i></button>
+        <app-validate class="textarea" #cmp *ngIf="projectCredentials.abstract.nl" [projectCredentials]="projectCredentials.abstract.nl.validate"  [hidden]='!isExpandedValidate.abstract'></app-validate>
+
+    </div>
+
+    <ng-template #eng>
+    <div *ngIf="language === 'eng'">
+        <h5>{{'Engels'| translate}}</h5> 
+        <h4>{{'Abstract' | translate}}</h4>
+        <!-- fix -->
+        <!-- !(isAdmin || editable_by.abstract.includes(AuthenticatedUser)) -->
+        <quill-editor [disabled]='!(isAdmin || editable_by.abstract<.includes(AuthenticatedUser))' class="quill-editor" [style]="{height: '200px'}" name="abstract" *ngIf="projectCredentials.abstract && projectCredentials.abstract.en" [(ngModel)]="projectCredentials.abstract.en.value"><div quill-editor-toolbar>
+            <span class="ql-formats">
+                <select class="ql-size" [title]="'Size'">
+                  <option selected></option>
+                  <option value="small"></option>
+                  <option value="large"></option>
+                  <option value="huge"></option>
+                </select>
+              </span>
+            <span class="ql-formats">
+                <button class="ql-bold">Bold</button>
+                <button class="ql-italic">Italic</button>
+                <button class="ql-underline">Underline</button>
+                <button class="ql-strike">Strike</button>
+            </span>
+            <span class="ql-formats">
+              <select class="ql-align" [title]="'Aligment'">
+                <option selected></option>
+                <option value="center"></option>
+                <option value="right"></option>
+                <option value="justify"></option>
+              </select>
+            </span>
+            <span class="ql-formats">
+                <button class="ql-list" value="ordered"></button>
+                <button class="ql-list" value="bullet"></button>
+              </span>
+          </div><div quill-editor-element></div></quill-editor>
+          <button mat-button (click)="isExpandedValidate.abstract = !isExpandedValidate.abstract" class="button--validate validateQuill"><i class="fa fa-check" aria-hidden="true"></i></button>
+          <app-validate class="textarea" #cmp *ngIf="projectCredentials.abstract.en" [projectCredentials]="projectCredentials.abstract.en.validate"  [hidden]='!isExpandedValidate.abstract'></app-validate>
+      </div>
+    </ng-template>
+
+
+    <button class="button--save" (click)="save()" mat-button>{{'Opslaan' | translate}}</button>
+    <button class="button--save" *ngIf="isAdmin" mat-button (click)="validate()">{{'Valideren'| translate}}</button>
+
+    </form>
+  </div>

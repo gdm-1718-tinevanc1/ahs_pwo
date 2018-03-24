@@ -1,0 +1,43 @@
+.search-container .dropdown__filters{
+    margin-top: -1px;
+}
+
+hr{
+    margin-top: 0px;
+}
+
+.mat-radio-button{
+    display: block;
+}
+
+.table h5{
+    float: left;
+    padding-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    table{
+        border-collapse: collapse;
+        border-spacing: 0;
+        width: 100%;
+    } 
+    th {
+        font-size: 1rem;
+    }
+
+    hr{
+        display: none;
+    }
+
+    .table-lg{
+        display: none;
+    }
+}
+
+
+
+@media (min-width: 768px) {
+    .table-sm{
+        display: none;
+    }
+}

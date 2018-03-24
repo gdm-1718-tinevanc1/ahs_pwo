@@ -1,0 +1,45 @@
+<ul *ngIf="isExpandedFilter" class='nav navbar-nav nav__filter'>
+  <mat-radio-group name="status" (change)="filter($event)">
+      <li>
+        <mat-radio-button  value="ODC"> {{ 'ODC' |translate}}</mat-radio-button>
+    </li>
+    <li>
+        <mat-radio-button  value="financingform"> {{ 'Financieringsvormen' |translate}}</mat-radio-button>
+    </li>
+    <li>
+        <mat-radio-button  value="education"> {{ 'Opleiding' |translate}}</mat-radio-button>
+    </li>
+    <li>
+        <mat-radio-button  value="none"> {{ 'Geen filter' |translate}}</mat-radio-button>
+    </li>
+</mat-radio-group> 
+
+</ul>
+<div class="nav-search-project">
+  <mat-accordion>
+      <mat-expansion-panel *ngFor="let project of projects | orderBy: filterValue | slice:slice_start:slice_end">
+          <mat-expansion-panel-header>
+          <mat-panel-title>
+
+              <span *ngIf="project.shorttitle.nl.value">{{project.shorttitle.nl.value}}</span>
+              <span *ngIf="!project.shorttitle.nl.value"  class="bold">{{'Nieuw project' | translate}}</span>
+            </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="bold" *ngIf="filterValue == 'financingforms[0].financingform.name' && project.financingforms[0]">{{project.financingforms[0].financingform.name}} </div>
+        <div class="bold" *ngIf="filterValue == 'participants[0].participant.name' && project.participants[0]">{{project.participants[0].participant.name}} </div>
+
+        <a routerLink="/project/{{ project.id }}">
+          <h5>
+            <span *ngIf="project.title.nl.value">{{project.title.nl.value}}</span>
+            <span *ngIf="!project.title.nl.value"  class="bold">{{'Nieuw project' | translate}}</span>
+          </h5>
+          {{project.description.nl.value}}
+        </a>
+      </mat-expansion-panel>
+    </mat-accordion>
+    <div class="searchlist__buttons">
+        <div class="searchlist__button"><a routerLink="/project"><i class="fa fa-plus" aria-hidden="true"></i></a></div>
+        <div class="searchlist__button"><a (click)='nextProjects()' ><i class="fa fa-sort" aria-hidden="true"></i></a></div>      
+    </div>
+  <div class="clear"></div>
+</div>

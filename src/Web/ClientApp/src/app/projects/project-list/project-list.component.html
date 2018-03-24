@@ -1,0 +1,70 @@
+  <div class="table projects__section">
+      <h4>Projects</h4>
+      <div class="search-container">
+        <i class="fa fa-search"></i><input placeholder="{{'Zoeken' | translate}}" name="searchText" [(ngModel)]="searchText" class="search">
+        <button mat-button class="button--down" [ngClass]="{'button--active': dropdownExpaned}" (click)="dropdownExpaned = !dropdownExpaned"><i class="fa fa-angle-down"></i></button>
+        <div class="dropdown__filters" *ngIf="dropdownExpaned">
+          <ul>
+
+              <!-- <div *ngIf="isAdmin" class="states">
+                  <h4>{{'Status' | translate}}</h4>
+                  <mat-radio-group name="status" [(ngModel)]="projectCredentials.statusId">
+                      <mat-radio-button  *ngFor="let status of states" [value]="status.id"> {{ status.name |translate}}</mat-radio-button>
+                  </mat-radio-group>      
+              </div> -->
+              
+              <mat-radio-group name="status" [(ngModel)]="statusValue">
+                  <mat-radio-button  *ngFor="let status of states" [value]="status.id"> {{ status.name |translate}}</mat-radio-button>
+                  <mat-radio-button  [value]="null"> {{ 'Alle' |translate}}</mat-radio-button>
+              </mat-radio-group>  
+
+<!-- 
+              <li><mat-checkbox *ngFor="let status of states" (change)="updateCheckedOptions(status, $event)" value="{{status.id}}">{{ status.name |translate}}</mat-checkbox></li>
+              <li><mat-checkbox [(ngModel)]="filterSelectAll" (change)='toggleFilterAllCheckbox()'>{{'Alle'| translate}}</mat-checkbox></li> -->
+          </ul>
+        </div>
+      </div>
+        <table class="table table-lg">
+            <thead>
+              <tr>
+                <th scope="col">{{'Titel' | translate}}</th>
+                <th scope="col">{{'Beheerder' | translate}}</th>
+                <th scope="col">{{'Status' | translate}}</th>
+                <th scope="col">{{'Laatst gewijzigd' | translate}}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let project of projects | filterByStatus: statusValue | searchBy: searchText | paginate: { itemsPerPage: 11, currentPage: p }">
+                <td><a routerLink="/project/{{ project.id }}">
+                  <span *ngIf="project.shorttitle.nl.value">{{project.shorttitle.nl.value}}</span>
+                <span *ngIf="!project.shorttitle.nl.value" class="bold">{{'Nieuw project' | translate}}</span></a></td>
+                <td><span *ngFor="let profile of project.profiles"> {{profile.profile.userName}}</span> </td>
+                <td> {{project.status.name}} </td>
+                <td> {{project.updatedAt | date}} </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <table class="table table-sm">
+              <thead>
+                <tr>
+                  <th scope="col">{{'Titel' | translate}}</th>
+                  <th scope="col">{{'Beheerder' | translate}}</th>
+                  <th scope="col">{{'Status' | translate}}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let project of projects | filterByStatus: statusValue | searchBy: searchText | paginate: { itemsPerPage: 11, currentPage: p }">
+                  <td><a routerLink="/project/{{ project.id }}">
+                    <span *ngIf="project.shorttitle.nl.value">{{project.shorttitle.nl.value}}</span>
+                  <span *ngIf="!project.shorttitle.nl.value" class="bold">{{'Nieuw project' | translate}}</span></a></td>
+                  <td><span *ngFor="let profile of project.profiles"> {{profile.profile.userName}}</span> </td>
+                  <td> {{project.status.name}} </td>
+                </tr>
+              </tbody>
+            </table>
+
+          <hr>
+          <pagination-controls (pageChange)="p = $event" previousLabel="" nextLabel="" maxSize="6"></pagination-controls>
+    </div>
+    

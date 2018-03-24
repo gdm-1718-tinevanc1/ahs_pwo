@@ -1,0 +1,41 @@
+@import '~@angular/material/theming';
+@import '../../../styles.scss';
+
+.projects__section{
+    background-color: $white;
+    margin: 50px 20px 30px -7%;
+    padding: 10px;
+
+    h4{
+        text-transform: uppercase;
+        color: $secondary-color;
+        float: left;
+    }
+
+    .search-container{
+        margin-top:0;
+    }
+
+    .mat-radio-button{
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects__section{
+        margin: 0;
+        padding:0;
+        width: 100%;
+        background: none;
+        background-color: none;
+    }
+}
+
+
+/* .mat-radio-button.mat-accent.mat-radio-checked .mat-radio-outer-circle{
+            border-color: $white;
+    }
+
+    .mat-radio-checked .mat-radio-inner-circle{
+        background-color: $white;
+    } */

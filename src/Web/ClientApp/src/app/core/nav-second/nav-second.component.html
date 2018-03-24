@@ -1,0 +1,24 @@
+<div class='second-nav'>
+  <ul>
+    <div class='row'>
+      <div class="col-sm-1 second-nav__language">
+        <mat-form-field class="select--language">
+            <mat-select (change)="onChange($event.value)" [value]="selectedLanguage">
+              <mat-option value="nl">NL</mat-option>
+              <mat-option value="eng">ENG</mat-option>
+            </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-11">
+        <div class="row">
+          <li class='col-sm-2 second-nav__item' [routerLink]="['general']" [routerLinkActive]='["second_link-active"]'>{{'Algemeen' | translate}}</li>
+          <li class='col-sm-2 second-nav__item' [routerLink]="['abstract']" [routerLinkActive]='["second_link-active"]'>{{'Abstract' | translate}}</li>
+          <li class='col-sm-2 second-nav__item' [routerLink]="['metadata']" [routerLinkActive]='["second_link-active"]'>{{'Metadata' | translate}}</li>
+          <li class='col-sm-2 second-nav__item' [routerLink]="['budget']" [routerLinkActive]='["second_link-active"]'>{{'Budget' | translate}}</li>
+          <li class='col-sm-2 second-nav__item' [routerLink]="['media']" [routerLinkActive]='["second_link-active"]'>{{'Media' | translate}}</li>
+          <li class='col-sm-2 second-nav__item' [routerLink]="['downloads']" [routerLinkActive]='["second_link-active"]'>{{'Downloads' | translate}}</li>
+        </div>
+      </div>
+    </div>
+  </ul>
+</div>

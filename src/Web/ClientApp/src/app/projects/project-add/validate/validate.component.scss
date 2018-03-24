@@ -1,0 +1,35 @@
+
+@import '../../../../styles.scss';
+
+.block__validate{
+    background-color: $secondary-color;
+    margin-bottom: 20px;
+    // font-size: 0.9rem;
+    padding: 10px 10px 0;
+    color: $white;
+    ul {
+        list-style: none;
+        padding-left: 0px;
+    }
+    h6 {
+        text-transform: uppercase;
+    }
+    p {
+        font-size: 1.2rem;
+    }
+    .footer{
+        height: 30px;
+        background-color: $primary-color;
+        width: 100%;
+        margin-left: 5px;
+        width: calc(100% - 10px);
+        line-height: 30px;
+        display: inline-block
+    }
+
+    textarea {
+        height: 100px;
+        color: $black;
+        margin-top: 0px;
+    }
+}

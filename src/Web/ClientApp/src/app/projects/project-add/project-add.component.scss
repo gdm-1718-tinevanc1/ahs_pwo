@@ -1,0 +1,27 @@
+@import '../../../styles.scss';
+
+.project__add{
+    margin-left: calc( -5% - 55px );
+    margin-right: -15px;
+    padding: 10px;
+    min-height: 100vh;
+}
+
+
+@media (max-width: 767px) {
+    .project__add{
+        margin-left:  0;
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+}
+
+.project__header{
+    background-color: $white;
+    color: $primary-color;
+    text-transform: uppercase;
+    font-weight: bold;
+    padding: 20px 0 0 20px;
+    margin: -10px;
+    margin-bottom: 0;
+}

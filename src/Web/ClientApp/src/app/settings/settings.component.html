@@ -1,0 +1,57 @@
+<div class="settings">
+    <mat-accordion class="button--upload">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+              <mat-panel-title>
+                <i class="fa fa-globe icon" aria-hidden="true"></i>
+                    {{'Standaardtaal' |translate}}
+                </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-radio-group>
+              <mat-radio-button (click)="switchLanguage('nl')" value="nl"> {{'Nederlands' |translate}}</mat-radio-button>
+              <mat-radio-button (click)="switchLanguage('en')" value="en">{{'Engels' |translate}}</mat-radio-button>
+          </mat-radio-group>
+        </mat-expansion-panel>
+    </mat-accordion>
+    
+    <div class="row">
+        <button class="button--upload">
+            <i class="fa fa-font icon" aria-hidden="true"></i>
+            {{'Tekstgrootte' |translate}}
+            <mat-slider></mat-slider>
+        </button>
+    </div>
+    
+    <mat-accordion class="button--upload">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+              <mat-panel-title>
+                <i class="fa fa-paint-brush icon" aria-hidden="true"></i>
+                    {{'Kleur' |translate}}
+                </mat-panel-title>
+          </mat-expansion-panel-header>
+          <mat-radio-group>
+              <mat-radio-button value="bleu">{{'Blauw' |translate}}</mat-radio-button>
+              <mat-radio-button value="orange">{{'Oranje' |translate}}</mat-radio-button>
+          </mat-radio-group>
+        </mat-expansion-panel>
+    </mat-accordion>
+    
+    <mat-accordion class="button--upload">
+        <mat-expansion-panel>
+          <mat-expansion-panel-header>
+              <mat-panel-title>
+                <i class="fa fa-user icon" aria-hidden="true"></i>
+                    {{'Gebruikersafbeelding' |translate}}
+                </mat-panel-title>
+          </mat-expansion-panel-header>
+          <img *ngIf="imageSrc" class="form__image" [src]="imageSrc" />
+          <button for="icon" mat-button (click)="iconFileInput.click()">{{'Uploaden' |translate}}</button>
+          <button mat-button (click)="cancel()">{{'Annuleer' |translate}}</button>
+          <input class="hidden" name="icon" type="file" placeholder="Gebruikersafbeelding" #iconFileInput (change)="previewImage($event)"/> <br>
+        </mat-expansion-panel>
+    </mat-accordion>
+    
+    <button class="button--save" mat-button>{{'Opslaan' |translate}}</button>
+    
+</div>

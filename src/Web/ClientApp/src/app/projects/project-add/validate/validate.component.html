@@ -1,0 +1,45 @@
+<div class="block__validate"> 
+    <fieldset [disabled]='!isAdmin'>
+    <div class="row">
+      <div class="col-sm-3">
+        <h6>{{'Algemeen' | translate}}</h6>
+        <ul>
+          <li><mat-checkbox [(ngModel)]="validate.allow_changes">{{'Wijzigingen toestaan' | translate}}</mat-checkbox></li>
+          <li><mat-checkbox [(ngModel)]="validate.required">{{'Verplicht' | translate}}</mat-checkbox></li>
+          <li><mat-checkbox [(ngModel)]="validate.publication_ok">{{'Ok voor publicatie' | translate}}</mat-checkbox></li>
+        </ul>
+        <h6>{{'Gevalideerd door' | translate}}:</h6>
+        <p>{{validatedBy}}</p>
+      </div>
+      <div class="col-sm-5">
+        <h6>{{'Feedback' | translate}}</h6>
+        <textarea [(ngModel)]="validate.feedback">{{'Indien niet ok voor publicatie' | translate}}</textarea>
+      </div>
+
+
+      <div class="col-sm-4">
+        <h6>{{'Zichtbaar voor' | translate}}</h6>
+        <mat-form-field class="form__value">
+            <mat-select [disabled]='!isAdmin' [(value)]="validate.visible_to">
+              <mat-option value="option1">{{'Enkel binnen artevelde' |translate}}</mat-option>
+              <mat-option value="option2">{{'Publiek' |translate}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+
+        <h6>{{'Editeerbaar door' | translate}}</h6>
+        <mat-form-field class="form__value">
+            <mat-select [disabled]='!isAdmin' [(value)]="validate.editable_by" multiple>
+                <mat-option *ngFor="let profile of profiles" [value]="profile.id">{{profile.userName}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12 footer">
+          <p>{{'Laatste gewijzigd' | translate}}: {{validatedBy}}</p>
+      </div>
+    </div>
+  </fieldset>
+</div>
+
+

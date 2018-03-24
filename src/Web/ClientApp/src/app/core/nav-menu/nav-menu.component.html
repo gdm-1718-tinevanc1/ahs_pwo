@@ -1,0 +1,95 @@
+<div class='main-nav'>
+    <div class='navbar navbar-inverse'>
+        <div class='navbar-header'>
+            <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse' [attr.aria-expanded]='isExpanded' (click)='toggle()'>
+                <span class='sr-only'>Toggle navigation</span>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+                <span class='icon-bar'></span>
+            </button>
+            <div id="header" class='navbar__header' (click)="isExpandedUser = !isExpandedUser"><img class="header__image"  *ngIf="profile" [src]="profile.image"> <span class="header__user" *ngIf="profile"> {{profile.firstName}} </span>
+                <i class="fa fa-angle-up nav__angle" *ngIf="isExpandedUser" aria-hidden="true"></i>
+                <i class="fa fa-angle-down nav__angle" *ngIf="!isExpandedUser" aria-hidden="true"></i>
+            </div>
+        </div>
+        <div class='clearfix'>
+        </div>
+        <div id="offcanvas__navigation" class="collapse" [ngClass]='{ "in": isExpanded }'>
+            <ul class='nav navbar-nav'>
+                <li [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
+                    <a [routerLink]='["/"]' (click)='collapse()'>
+                        <i class="fa fa-home" aria-hidden="true"></i> Dashboard
+                    </a>
+                </li>
+                <li [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
+                    <a [routerLink]='["/settings"]' (click)='collapse()'>
+                        <i class="fa fa-cog" aria-hidden="true"></i> {{ 'Instellingen' | translate }}
+                    </a>
+                </li>
+                <li [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
+                    <a [routerLink]='["/projects"]' (click)='collapse()'>
+                        <i class="fa fa-file" aria-hidden="true"></i> {{ 'Projecten' | translate }}
+                    </a>
+                </li>
+                <li *ngIf="isAdmin" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
+                    <a [routerLink]='["/profiles"]' (click)='collapse()'>
+                        <i class="fa fa-user" aria-hidden="true"></i> {{ 'Gebruikers' | translate }}
+                    </a>
+                </li>
+                <li [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
+                    <a (click)='collapse()'>
+                        <i class="fa fa-sign-out" aria-hidden="true"></i> {{ 'Afmelden' | translate }}
+                    </a>
+                </li>
+             </ul>
+
+        </div>
+
+        <div id="navigation" class='navbar-collapse collapse' [ngClass]='{ "in": isExpanded }'>
+            <ul class='nav navbar-nav nav__user' *ngIf="isExpandedUser">
+                <li [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
+                    <a [routerLink]='["/"]' (click)='collapse()'>
+                        <i class="fa fa-home" aria-hidden="true"></i> Dashboard
+                    </a>
+                </li>
+                <li [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
+                    <a [routerLink]='["/settings"]' (click)='collapse()'>
+                        <i class="fa fa-cog" aria-hidden="true"></i> {{ 'Instellingen' | translate }}
+                    </a>
+                </li>
+                <li [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
+                    <a  (click)='collapse()'>
+                            <i class="fa fa-sign-out" aria-hidden="true"></i> {{ 'Afmelden' | translate }}
+                    </a>
+                </li>
+            </ul>
+            <ul class='nav navbar-nav nav__project'>
+                <li (click)="isExpandedFilter = !isExpandedFilter">
+                    <a (click)='collapse()'>
+                        <i class="fa fa-search" aria-hidden="true"></i> {{ 'Projecten zoeken' | translate }}
+                        <i class="fa fa-angle-up nav__angle" *ngIf="isExpandedFilter" aria-hidden="true"></i>
+                        <i class="fa fa-angle-down nav__angle" *ngIf="!isExpandedFilter" aria-hidden="true"></i>
+                   </a>
+                </li>
+                <app-nav-search-project [isExpandedFilter]='isExpandedFilter'></app-nav-search-project>
+            </ul>
+            <ul class="nav navbar-nav nav__project nav-bottom">
+                <li [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
+                    <a [routerLink]='["/projects"]' (click)='collapse()'>
+                        <i class="fa fa-file" aria-hidden="true"></i> {{ 'Projecten' | translate }}
+                    </a>
+                </li>
+                <li *ngIf="isAdmin" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
+                    <a [routerLink]='["/profiles"]' (click)='collapse()'>
+                        <i class="fa fa-user" aria-hidden="true"></i> {{ 'Gebruikers' | translate }}
+                    </a>
+                </li>
+<!--                 <li *ngIf="isAdmin" [routerLinkActive]='["link-active"]' [routerLinkActiveOptions]='{ exact: true }'>
+                    <a  (click)='collapse()'>
+                        <i class="fa fa-lock" aria-hidden="true"></i> {{ 'Admin' | translate }}
+                    </a>
+                </li> -->
+            </ul>
+        </div>
+    </div>
+</div>

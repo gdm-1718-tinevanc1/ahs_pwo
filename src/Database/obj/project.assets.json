@@ -817,21 +817,6 @@
           "lib/netstandard1.0/_._": {}
         }
       },
-      "Microsoft.Sharepoint/1.0.1": {
-        "type": "package",
-        "compile": {
-          "lib/net40/Microsoft.SharePoint.Client.DocumentManagement.dll": {},
-          "lib/net40/Microsoft.SharePoint.Client.Runtime.dll": {},
-          "lib/net40/Microsoft.SharePoint.Client.Search.dll": {},
-          "lib/net40/Microsoft.SharePoint.Client.dll": {}
-        },
-        "runtime": {
-          "lib/net40/Microsoft.SharePoint.Client.DocumentManagement.dll": {},
-          "lib/net40/Microsoft.SharePoint.Client.Runtime.dll": {},
-          "lib/net40/Microsoft.SharePoint.Client.Search.dll": {},
-          "lib/net40/Microsoft.SharePoint.Client.dll": {}
-        }
-      },
       "Microsoft.Win32.Registry/4.4.0": {
         "type": "package",
         "dependencies": {
@@ -2410,7 +2395,6 @@
           "Microsoft.AspNetCore.Identity": "2.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.0.0",
-          "Microsoft.SharePoint": "1.0.1",
           "Newtonsoft.Json": "10.0.3",
           "OpenIddict": "2.0.0",
           "OpenIddict.EntityFrameworkCore": "2.0.0",
@@ -3196,19 +3180,6 @@
         "microsoft.netcore.targets.1.1.0.nupkg.sha512",
         "microsoft.netcore.targets.nuspec",
         "runtime.json"
-      ]
-    },
-    "Microsoft.Sharepoint/1.0.1": {
-      "sha512": "iJg9fFYiyXHxsBq85dsoHMBoKReZTzl5OVS5guz+qZSWpN1UJwbb/ZYWKXyYWGEUm7nrhHXKESXGVoM+BguReA==",
-      "type": "package",
-      "path": "microsoft.sharepoint/1.0.1",
-      "files": [
-        "lib/net40/Microsoft.SharePoint.Client.DocumentManagement.dll",
-        "lib/net40/Microsoft.SharePoint.Client.Runtime.dll",
-        "lib/net40/Microsoft.SharePoint.Client.Search.dll",
-        "lib/net40/Microsoft.SharePoint.Client.dll",
-        "microsoft.sharepoint.1.0.1.nupkg.sha512",
-        "microsoft.sharepoint.nuspec"
       ]
     },
     "Microsoft.Win32.Registry/4.4.0": {
@@ -7473,17 +7444,5 @@
         "warn": true
       }
     }
-  },
-  "logs": [
-    {
-      "code": "NU1701",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Package 'Microsoft.Sharepoint 1.0.1' was restored using '.NETFramework,Version=v4.6.1' instead of the project target framework '.NETStandard,Version=v2.0'. This package may not be fully compatible with your project.",
-      "libraryId": "Microsoft.Sharepoint",
-      "targetGraphs": [
-        ".NETStandard,Version=v2.0"
-      ]
-    }
-  ]
+  }
 }

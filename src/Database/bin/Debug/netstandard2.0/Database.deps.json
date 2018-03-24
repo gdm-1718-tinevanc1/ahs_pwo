@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETStandard,Version=v2.0/",
-    "signature": "961f140ced3e655acf3c30bd89df08a51010b12a"
+    "signature": "b6f5bd1784bc117d1cb9f3c4e036498abb4116db"
   },
   "compilationOptions": {},
   "targets": {
@@ -588,14 +588,6 @@
       },
       "Microsoft.NETCore.Platforms/1.1.0": {},
       "Microsoft.NETCore.Targets/1.1.0": {},
-      "Microsoft.Sharepoint/1.0.1": {
-        "runtime": {
-          "lib/net40/Microsoft.SharePoint.Client.DocumentManagement.dll": {},
-          "lib/net40/Microsoft.SharePoint.Client.Runtime.dll": {},
-          "lib/net40/Microsoft.SharePoint.Client.Search.dll": {},
-          "lib/net40/Microsoft.SharePoint.Client.dll": {}
-        }
-      },
       "Microsoft.Win32.Registry/4.4.0": {
         "dependencies": {
           "System.Security.AccessControl": "4.4.0",
@@ -1569,7 +1561,6 @@
           "Microsoft.AspNetCore.Identity": "2.0.0",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "2.0.0",
           "Microsoft.EntityFrameworkCore.SqlServer": "2.0.0",
-          "Microsoft.Sharepoint": "1.0.1",
           "Newtonsoft.Json": "10.0.3",
           "OpenIddict": "2.0.0-rc2-final",
           "OpenIddict.EntityFrameworkCore": "2.0.0-rc2-final",
@@ -2014,13 +2005,6 @@
       "sha512": "sha512-aOZA3BWfz9RXjpzt0sRJJMjAscAUm3Hoa4UWAfceV9UTYxgwZ1lZt5nO2myFf+/jetYQo4uTP7zS8sJY67BBxg==",
       "path": "microsoft.netcore.targets/1.1.0",
       "hashPath": "microsoft.netcore.targets.1.1.0.nupkg.sha512"
-    },
-    "Microsoft.Sharepoint/1.0.1": {
-      "type": "package",
-      "serviceable": true,
-      "sha512": "sha512-iJg9fFYiyXHxsBq85dsoHMBoKReZTzl5OVS5guz+qZSWpN1UJwbb/ZYWKXyYWGEUm7nrhHXKESXGVoM+BguReA==",
-      "path": "microsoft.sharepoint/1.0.1",
-      "hashPath": "microsoft.sharepoint.1.0.1.nupkg.sha512"
     },
     "Microsoft.Win32.Registry/4.4.0": {
       "type": "package",

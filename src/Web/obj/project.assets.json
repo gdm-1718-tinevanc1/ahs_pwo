@@ -13333,34 +13333,32 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/tine/Sites/EP18-57PWO/src/Web/Web.csproj",
+      "projectUniqueName": "/Users/tine/Sites/ahs_pwo/src/Web/Web.csproj",
       "projectName": "Web",
-      "projectPath": "/Users/tine/Sites/EP18-57PWO/src/Web/Web.csproj",
+      "projectPath": "/Users/tine/Sites/ahs_pwo/src/Web/Web.csproj",
       "packagesPath": "/Users/tine/.nuget/packages/",
-      "outputPath": "/Users/tine/Sites/EP18-57PWO/src/Web/obj/",
+      "outputPath": "/Users/tine/Sites/ahs_pwo/src/Web/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/Users/tine/Sites/EP18-57PWO/src/Web/NuGet.Config",
         "/Users/tine/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"
       ],
       "sources": {
-        "https://api.nuget.org/v3/index.json": {},
-        "https://dotnet.myget.org/F/dotnet-core/api/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
         "netcoreapp2.0": {
           "projectReferences": {
-            "/Users/tine/Sites/EP18-57PWO/src/Models/Models.csproj": {
-              "projectPath": "/Users/tine/Sites/EP18-57PWO/src/Models/Models.csproj"
+            "/Users/tine/Sites/ahs_pwo/src/Models/Models.csproj": {
+              "projectPath": "/Users/tine/Sites/ahs_pwo/src/Models/Models.csproj"
             },
-            "/Users/tine/Sites/EP18-57PWO/src/Database/Database.csproj": {
-              "projectPath": "/Users/tine/Sites/EP18-57PWO/src/Database/Database.csproj"
+            "/Users/tine/Sites/ahs_pwo/src/Database/Database.csproj": {
+              "projectPath": "/Users/tine/Sites/ahs_pwo/src/Database/Database.csproj"
             }
           }
         }

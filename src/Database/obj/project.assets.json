@@ -7374,11 +7374,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/tine/Sites/EP18-57PWO/src/Database/Database.csproj",
+      "projectUniqueName": "/Users/tine/Sites/ahs_pwo/src/Database/Database.csproj",
       "projectName": "Database",
-      "projectPath": "/Users/tine/Sites/EP18-57PWO/src/Database/Database.csproj",
+      "projectPath": "/Users/tine/Sites/ahs_pwo/src/Database/Database.csproj",
       "packagesPath": "/Users/tine/.nuget/packages/",
-      "outputPath": "/Users/tine/Sites/EP18-57PWO/src/Database/obj/",
+      "outputPath": "/Users/tine/Sites/ahs_pwo/src/Database/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -7395,8 +7395,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "/Users/tine/Sites/EP18-57PWO/src/Models/Models.csproj": {
-              "projectPath": "/Users/tine/Sites/EP18-57PWO/src/Models/Models.csproj"
+            "/Users/tine/Sites/ahs_pwo/src/Models/Models.csproj": {
+              "projectPath": "/Users/tine/Sites/ahs_pwo/src/Models/Models.csproj"
             }
           }
         }

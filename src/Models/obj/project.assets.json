@@ -7205,11 +7205,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/tine/Sites/EP18-57PWO/src/Models/Models.csproj",
+      "projectUniqueName": "/Users/tine/Sites/ahs_pwo/src/Models/Models.csproj",
       "projectName": "Models",
-      "projectPath": "/Users/tine/Sites/EP18-57PWO/src/Models/Models.csproj",
+      "projectPath": "/Users/tine/Sites/ahs_pwo/src/Models/Models.csproj",
       "packagesPath": "/Users/tine/.nuget/packages/",
-      "outputPath": "/Users/tine/Sites/EP18-57PWO/src/Models/obj/",
+      "outputPath": "/Users/tine/Sites/ahs_pwo/src/Models/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

@@ -47,7 +47,6 @@
     <div *ngIf="language === 'eng'">
         <h5>{{'Engels'| translate}}</h5> 
         <h4>{{'Abstract' | translate}}</h4>
-        <!-- fix -->
         <!-- !(isAdmin || editable_by.abstract.includes(AuthenticatedUser)) -->
         <quill-editor [disabled]='!(isAdmin || editable_by.abstract<.includes(AuthenticatedUser))' class="quill-editor" [style]="{height: '200px'}" name="abstract" *ngIf="projectCredentials.abstract && projectCredentials.abstract.en" [(ngModel)]="projectCredentials.abstract.en.value"><div quill-editor-toolbar>
             <span class="ql-formats">

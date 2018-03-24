@@ -25,7 +25,7 @@ namespace Web.Controllers
         [HttpGet("{typeParticipants}", Name = "GetParticipantsByType")]
         public async Task<IActionResult> GetParticipantsByType(String typeParticipants)
         {
-            TypeParticipant type;
+            // TypeParticipant type;
             var model = await ApplicationDbContext.Participants.Where(t => t.TypeParticipant == (TypeParticipant) Enum.Parse(typeof(TypeParticipant), typeParticipants)).ToListAsync();
 
            

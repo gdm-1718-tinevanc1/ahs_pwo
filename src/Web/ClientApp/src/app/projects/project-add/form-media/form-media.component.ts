@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { concat } from 'rxjs/observable/concat';
 import { Router } from '@angular/router'; 
 import { ProjectService } from '../../../core/shared/services/project.service'
+import { AuthenticationService } from '../../../core/shared/services/authentication.service'
 
 import { ActivatedRoute } from '@angular/router';
 import { Iproject } from '../../../core/shared/models/IProject';
@@ -12,6 +13,9 @@ import { Iproject } from '../../../core/shared/models/IProject';
   styleUrls: ['./form-media.component.scss']
 })
 export class FormMediaComponent implements OnInit {
+  isAdmin = this.authenticationService.isAdmin;
+  AuthenticatedUser = this.authenticationService.profileId;
+
   id: null;
   message = {
     error: '',
@@ -29,6 +33,7 @@ export class FormMediaComponent implements OnInit {
   
   constructor(
     private projectService:ProjectService,
+    private authenticationService:AuthenticationService,
     private router: Router,
     private route: ActivatedRoute
   ) { }

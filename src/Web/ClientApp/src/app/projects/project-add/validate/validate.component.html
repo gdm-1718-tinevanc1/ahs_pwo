@@ -1,6 +1,6 @@
 <div class="block__validate"> 
     <fieldset [disabled]='!isAdmin'>
-    <div class="row">
+    <div class="row" *ngIf="validate">
       <div class="col-sm-3">
         <h6>{{'Algemeen' | translate}}</h6>
         <ul>

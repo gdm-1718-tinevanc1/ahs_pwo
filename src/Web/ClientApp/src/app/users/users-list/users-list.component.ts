@@ -10,6 +10,8 @@ import { TranslateService } from '@ngx-translate/core';
   styleUrls: ['./users-list.component.scss']
 })
 export class UsersListComponent implements OnInit {
+  searchText;
+  p;
   profiles = [];
   dropdownExpaned: boolean = false;
   // filerSelectAll: boolean = false;

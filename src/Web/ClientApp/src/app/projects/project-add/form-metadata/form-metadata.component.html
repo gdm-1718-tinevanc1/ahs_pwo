@@ -25,7 +25,7 @@
       <div class="buttons-right">
             <button mat-button class="button--validate" (click)="isExpandedValidate.projectpartner = !isExpandedValidate.projectpartner"><i class="fa fa-check" aria-hidden="true"></i></button>    
       </div><div class="clear"></div>
-      <app-validate class="select" #cmp *ngIf="projectCredentials.partnerValidate && projectCredentials.partnerValidate.validate" [projectCredentials]="projectCredentials.partnerValidate.validate"  [hidden]='!isExpandedValidate.projectpartner'></app-validate>
+      <app-validate class="select" #cmp *ngIf="projectCredentials.partnerValidate" [projectCredentials]="projectCredentials.partnerValidate.validate"  [hidden]='!isExpandedValidate.projectpartner'></app-validate>
 
       <h4>{{'Projectmedewerkers' | translate}}</h4>
       {{participants_type}}
@@ -54,7 +54,7 @@
         <button mat-button class="button--validate" (click)="minusField('AmountParticipant')"><i class="fa fa-minus"></i></button>
         <button mat-button class="button--validate" (click)="isExpandedValidate.participant = !isExpandedValidate.participant"><i class="fa fa-check" aria-hidden="true"></i></button>    
     </div><div class="clear"></div>
-    <app-validate class="select" #cmp *ngIf="projectCredentials.participantValidate && projectCredentials.participantValidate.validate" [projectCredentials]="projectCredentials.participantValidate.validate"  [hidden]='!isExpandedValidate.participant'></app-validate>
+    <app-validate class="select" #cmp *ngIf="projectCredentials.participantValidate" [projectCredentials]="projectCredentials.participantValidate.validate"  [hidden]='!isExpandedValidate.participant'></app-validate>
 
     <h4>{{'Financieringsvormen' | translate}}</h4>
     <input [disabled]='!(isAdmin || editable_by.financingforms.includes(AuthenticatedUser))' (change)="addFinancingform($event)" placeholder="{{'nieuwe financieringsvorm' | translate}}">
@@ -69,7 +69,7 @@
           <div class="buttons-right">
             <button mat-button (click)="isExpandedValidate.financingforms = !isExpandedValidate.financingforms" class="button--validate"><i class="fa fa-check" aria-hidden="true"></i></button>    
       </div><div class="clear"></div>
-    <app-validate class="select" #cmp *ngIf="projectCredentials.financingformValidate && projectCredentials.financingformValidate.validate" [projectCredentials]="projectCredentials.financingformValidate.validate"  [hidden]='!isExpandedValidate.financingforms'></app-validate>
+    <app-validate class="select" #cmp *ngIf="projectCredentials.financingformValidate" [projectCredentials]="projectCredentials.financingformValidate.validate"  [hidden]='!isExpandedValidate.financingforms'></app-validate>
  
 
     <h4>{{'Tags' | translate}} ({{'minimaal' | translate}} 3)</h4>
@@ -99,7 +99,7 @@
             <button mat-button class="button--validate" (click)="minusField('AmountLinks')"><i class="fa fa-minus"></i></button>
             <button mat-button (click)="isExpandedValidate.links = !isExpandedValidate.links" class="button--validate"><i class="fa fa-check" aria-hidden="true"></i></button>    
         </div><div class="clear"></div>
-     <app-validate class="select" #cmp *ngIf="projectCredentials.linkValidate && projectCredentials.linkValidate.validate" [projectCredentials]="projectCredentials.linkValidate.validate"  [hidden]='!isExpandedValidate.links'></app-validate>
+     <app-validate class="select" #cmp *ngIf="projectCredentials.linkValidate" [projectCredentials]="projectCredentials.linkValidate.validate"  [hidden]='!isExpandedValidate.links'></app-validate>
 
     </div>
 

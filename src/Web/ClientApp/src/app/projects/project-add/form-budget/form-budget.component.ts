@@ -15,6 +15,7 @@ import { ValidateComponent } from '../validate/validate.component';
 export class FormBudgetComponent implements OnInit {
   isAdmin = this.authenticationService.isAdmin;
   @ViewChildren('cmp') components: QueryList<ValidateComponent>;
+  AuthenticatedUser = this.authenticationService.profileId;
 
   valueObject = JSON.stringify(this.sharedService.sharedNode.validateObject);
 
@@ -25,11 +26,7 @@ export class FormBudgetComponent implements OnInit {
     warning: ''
   };
   isExpandedValidate = {
-    total: false,
-    artevelde: false,
-    operating: false,
-    investment: false,
-    staff: false
+    budget: false
   }
 
   projectCredentials = {
@@ -67,6 +64,7 @@ export class FormBudgetComponent implements OnInit {
           this.projectCredentials = project
           this.projectCredentials.budgetValidate = JSON.parse(this.projectCredentials.budgetValidate.toString());
 
+          /* fix */ 
           // this.editable_by.budget = this.projectCredentials.budget.validate.editable_by; this.editable_by.budget.push(project.profileId)
 
           if(!project.budget){

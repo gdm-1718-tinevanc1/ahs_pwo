@@ -17,7 +17,8 @@ export class SettingsComponent implements OnInit {
   imageSrc;
   message = {
     succes: '',
-    error: ''
+    error: '',
+    warning: ''
   }
   profileId = this.authenticationService.profileId;
   profile: Iprofile;

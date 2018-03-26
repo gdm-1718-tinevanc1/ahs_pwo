@@ -1,19 +1,19 @@
 <div class="dashboard">
     <div class='row dashboard__items'>
       <div class='col-sm-4'>
-          <mat-card [routerLink]='["/projects"]' (click)='collapse()'> 
+          <mat-card [routerLink]='["/projects"]'> 
               <i class="fa fa-file"></i>
               <p> {{countProjects}} {{'Projecten' | translate}}</p>
           </mat-card>
       </div>
       <div class='col-sm-4'>
-          <mat-card [routerLink]='["/projects"]' (click)='collapse()'>
+          <mat-card [routerLink]='["/projects"]'>
                 <i class="fa fa-file"></i>
                 <p> {{countValidateProjects}} {{'Gevalideerd projecten' | translate}} </p>
           </mat-card>
       </div>
       <div class='col-sm-4'>
-          <mat-card [routerLink]='["/profiles"]' (click)='collapse()'>
+          <mat-card [routerLink]='["/profiles"]'>
                 <i class="fa fa-user"></i>
                 <p> {{countProfiles}} {{'Gebruikers' | translate}} </p>
           </mat-card>

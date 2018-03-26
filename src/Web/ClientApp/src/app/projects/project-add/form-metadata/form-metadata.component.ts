@@ -18,6 +18,7 @@ import { ValidateComponent } from '../validate/validate.component';
 })
 export class FormMetadataComponent implements OnInit {
   isAdmin = this.authenticationService.isAdmin;
+  AuthenticatedUser = this.authenticationService.profileId;
   @ViewChildren('cmp') components: QueryList<ValidateComponent>;
   valueObject = JSON.stringify(this.sharedService.sharedNode.validateObject);
   language: string;
@@ -42,7 +43,9 @@ export class FormMetadataComponent implements OnInit {
   isExpandedValidate = {
     participant: false,
     tags: false,
-    financingforms: false
+    financingforms: false,
+    projectpartner: false,
+    links: false
   };
   /* amount fields */
   AmountParticipant:number = 1;

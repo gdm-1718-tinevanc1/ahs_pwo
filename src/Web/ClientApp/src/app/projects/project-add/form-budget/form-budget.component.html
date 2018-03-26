@@ -1,42 +1,44 @@
 <div class="form project__section">
-    <form class="page__form" enctype="multipart/form-data">
+    <form class="page__form" enctype="multipart/form-data" >
         <div class="message">
             <div *ngIf="message.succes" class="notif--succes"> <i class="fa fa-check"></i> {{message.succes}}</div>
             <div *ngIf="message.error" class="notif--error"> <i class="fa fa-times"></i> {{message.error}}</div>
             <div *ngIf="message.warning" class="notif--warning"> <i class="fa fa-exclamation-triangle"></i> {{message.warning}}</div>
             <div class="clear"></div>
           </div>
-        <div>
-            <label id="total" for="total">{{'Totaal budget' | translate}}</label><br>
-            <span class="eurosymbol">€</span>
-            <input [disabled]='!(isAdmin || editable_by.budget.includes(AuthenticatedUser))' id="total" name="total" type="text" maxlength="255" name="total" [(ngModel)]="projectCredentials.budget.totalBudget" />
-        </div>
-        
-        <div>
-            <label id="artevelde" for="artevelde">{{'Budget Artevelde hogeschool' | translate}}</label><br>
-            <span class="eurosymbol">€</span>
-            <input [disabled]='!(isAdmin || editable_by.budget.includes(AuthenticatedUser))' id="artevelde" name="artevelde" type="text" maxlength="255" name="artevelde" [(ngModel)]="projectCredentials.budget.arteveldeBudget" />
-        </div>
+          <div *ngIf="projectCredentials.budget">
+                <div>
+                    <label id="total" for="total">{{'Totaal budget' | translate}}</label><br>
+                    <span class="eurosymbol">€</span>
+                    <input [disabled]='!(isAdmin || editable_by.budget.includes(AuthenticatedUser))' id="total" name="total" type="text" maxlength="255" name="total"  [(ngModel)]="projectCredentials.budget.totalBudget" />
+                </div>
+                
+                <div>
+                    <label id="artevelde" for="artevelde">{{'Budget Artevelde hogeschool' | translate}}</label><br>
+                    <span class="eurosymbol">€</span>
+                    <input [disabled]='!(isAdmin || editable_by.budget.includes(AuthenticatedUser))' id="artevelde" name="artevelde" type="text" maxlength="255" name="artevelde" [(ngModel)]="projectCredentials.budget.arteveldeBudget" />
+                </div>
 
-        <div>
-            <label id="operating" for="operating">{{'Werkingsbudget' | translate}}</label><br>
-            <span class="eurosymbol">€</span>
-            <input [disabled]='!(isAdmin || editable_by.budget.includes(AuthenticatedUser))' id="operating" name="operating" type="text" maxlength="255" name="operating" [(ngModel)]="projectCredentials.budget.operatingBudget" />
-        </div>
+                <div>
+                    <label id="operating" for="operating">{{'Werkingsbudget' | translate}}</label><br>
+                    <span class="eurosymbol">€</span>
+                    <input [disabled]='!(isAdmin || editable_by.budget.includes(AuthenticatedUser))' id="operating" name="operating" type="text" maxlength="255" name="operating" [(ngModel)]="projectCredentials.budget.operatingBudget" />
+                </div>
 
-        <div>
-            <label id="investment" for="investment">{{'Investeringsbudget' | translate}}</label><br>
-            <span class="eurosymbol">€</span>
-            <input [disabled]='!(isAdmin || editable_by.budget.includes(AuthenticatedUser))' id="investment" name="investment" type="text" maxlength="255" name="investment" [(ngModel)]="projectCredentials.budget.investmentBudget" />
-        </div>
+                <div>
+                    <label id="investment" for="investment">{{'Investeringsbudget' | translate}}</label><br>
+                    <span class="eurosymbol">€</span>
+                    <input [disabled]='!(isAdmin || editable_by.budget.includes(AuthenticatedUser))' id="investment" name="investment" type="text" maxlength="255" name="investment" [(ngModel)]="projectCredentials.budget.investmentBudget" />
+                </div>
 
-        <div>
-            <label id="staff" for="staff">{{'Personeelbudget' | translate}}</label><br>
-            <span class="eurosymbol">€</span>
-            <input [disabled]='!(isAdmin || editable_by.budget.includes(AuthenticatedUser))' id="staff" name="staff" type="text" maxlength="255" name="staff" [(ngModel)]="projectCredentials.budget.staffBudget" />
-            <button mat-button (click)="isExpandedValidate.budget = !isExpandedValidate.budget" class="button--validate"><i class="fa fa-check" aria-hidden="true"></i></button>        
-            <app-validate class="input" #cmp *ngIf="projectCredentials.budgetValidate.validate" [projectCredentials]="projectCredentials.budgetValidate.validate"  [hidden]='!isExpandedValidate.budget'></app-validate>
-        </div>
+                <div>
+                    <label id="staff" for="staff">{{'Personeelbudget' | translate}}</label><br>
+                    <span class="eurosymbol">€</span>
+                    <input [disabled]='!(isAdmin || editable_by.budget.includes(AuthenticatedUser))' id="staff" name="staff" type="text" maxlength="255" name="staff" [(ngModel)]="projectCredentials.budget.staffBudget" />
+                    <button mat-button (click)="isExpandedValidate.budget = !isExpandedValidate.budget" class="button--validate"><i class="fa fa-check" aria-hidden="true"></i></button>        
+                    <app-validate class="input" #cmp *ngIf="projectCredentials.budgetValidate" [projectCredentials]="projectCredentials.budgetValidate.validate"  [hidden]='!isExpandedValidate.budget'></app-validate>
+                </div>
+            </div>
 
     <button class="button--save" (click)="save()" mat-button>{{'Opslaan' | translate}}</button>
     <button class="button--save" *ngIf="isAdmin" mat-button (click)="validate()">{{'Valideren'| translate}}</button>

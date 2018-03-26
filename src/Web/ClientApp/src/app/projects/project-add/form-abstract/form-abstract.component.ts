@@ -14,6 +14,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class FormAbstractComponent implements OnInit {
   isAdmin = this.authenticationService.isAdmin;
+  AuthenticatedUser = this.authenticationService.profileId;
   language: string;
 
   @ViewChildren('cmp') components: QueryList<ValidateComponent>;

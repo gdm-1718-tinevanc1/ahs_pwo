@@ -9,6 +9,9 @@ import { StatusService } from '../../core/shared/services/status.service'
   styleUrls: ['./projects-list.component.scss']
 })
 export class ProjectsListComponent implements OnInit {
+  searchText;
+  p;
+  dropdownExpaned: boolean = false;
   projects: Array<Iproject>; // Array<Iproject>
   states: {};
   statusValue = null;

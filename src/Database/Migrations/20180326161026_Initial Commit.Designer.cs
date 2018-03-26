@@ -12,7 +12,7 @@ using System;
 namespace Database.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    [Migration("20180324152129_Initial Commit")]
+    [Migration("20180326161026_Initial Commit")]
     partial class InitialCommit
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)

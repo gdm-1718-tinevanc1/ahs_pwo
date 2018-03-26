@@ -153,52 +153,7 @@ namespace Database
                 .WithMany(d => d.Projects)
                 .HasForeignKey(da => da.FinancingformId);
 
-            
-            /* 
-            builder.Entity<ProjectLink>()
-                .HasKey(a => new { a.ProjectId, a.LinkId });
 
-            builder.Entity<ProjectLink>()
-                .HasOne(da => da.Project)
-                .WithMany(d => d.Links)
-                .HasForeignKey(da => da.ProjectId);
-                
-            builder.Entity<ProjectLink>()
-                .HasOne(da => da.Link)
-                .WithMany(d => d.Projects)
-                .HasForeignKey(da => da.LinkId);
-
-            */
-            /* 
-            builder.Entity<ProjectSpearhead>()
-                .HasKey(a => new { a.ProjectId, a.SpearheadId });
-
-            builder.Entity<ProjectSpearhead>()
-                .HasOne(da => da.Project)
-                .WithMany(d => d.Spearheads)
-                .HasForeignKey(da => da.ProjectId);
-                
-            builder.Entity<ProjectSpearhead>()
-                .HasOne(da => da.Spearhead)
-                .WithMany(d => d.Projects)
-                .HasForeignKey(da => da.SpearheadId);
-
-*/
-
-            /*
-            builder.Entity<ProjectTag>()
-                .HasKey(a => new { a.ProjectId, a.TagId });
-
-            builder.Entity<ProjectTag>()
-                .HasOne(da => da.Project)
-                .WithMany(d => d.Tags)
-                .HasForeignKey(da => da.ProjectId);
-                
-            builder.Entity<ProjectTag>()
-                .HasOne(da => da.Tag)
-                .WithMany(d => d.Projects)
-                .HasForeignKey(da => da.TagId);
-*/
 
             // 
             builder.Entity<ProjectPublication>()

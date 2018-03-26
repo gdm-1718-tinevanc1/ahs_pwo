@@ -95,19 +95,7 @@ namespace Web.Controllers
             }
 
 
-            var oldProjectProfiles = ApplicationDbContext.ProjectProfile.Where(m => m.ProjectId == item.Id).ToList(); 
-
-                foreach(var oldProjectProfile in oldProjectProfiles) {
-                    ApplicationDbContext.Entry(oldProjectProfile).State = EntityState.Deleted;
-                    ApplicationDbContext.SaveChanges();
-                }  
-            
-
-            foreach (var profile in item.Profiles.ToList()){
-                Profile profile1 = ApplicationDbContext.Profiles.FirstOrDefault(m => m.Id == profile.ProfileId);
-                var af = new ProjectProfile { Project = item, Profile = profile1 };
-                ApplicationDbContext.ProjectProfile.Add(af); 
-            }
+               
 
 
             ApplicationDbContext.Projects.Add(item);

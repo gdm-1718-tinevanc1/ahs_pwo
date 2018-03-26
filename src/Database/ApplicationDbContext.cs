@@ -1,9 +1,4 @@
 using System;
-// using Microsoft.EntityFrameworkCore;
-// using Microsoft.EntityFrameworkCore.Metadata;
-// using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-// using OpenIddict;
-// using Npgsql.EntityFrameworkCore.PostgreSQL;
 using Models;
 using Models.Security;
 using System.Linq;

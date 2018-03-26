@@ -3,7 +3,6 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
-import { TransModule } from './pipes/translate/trans.module';
 
 /* pipes */
 import { SearchByPipe } from './pipes/search-by.pipe';
@@ -14,7 +13,6 @@ import { OrderByPipe } from './pipes/order-by.pipe';
 @NgModule({
   imports: [
     CommonModule,
-    TransModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

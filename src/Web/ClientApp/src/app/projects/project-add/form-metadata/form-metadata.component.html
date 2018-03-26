@@ -56,15 +56,15 @@
     </div><div class="clear"></div>
     <app-validate class="select" #cmp *ngIf="projectCredentials.participantValidate" [projectCredentials]="projectCredentials.participantValidate.validate"  [hidden]='!isExpandedValidate.participant'></app-validate>
 
-    <h4>{{'Financieringsvormen' | translate}}</h4>
-    <input [disabled]='!(isAdmin || editable_by.financingforms.includes(AuthenticatedUser))' (change)="addFinancingform($event)" placeholder="{{'nieuwe financieringsvorm' | translate}}">
-    
-    <h6> {{'Selecteer financieringsvorm' | translate}}</h6>
+    <h4>{{'Financieringsvormen' | translate}}</h4>    
     <mat-form-field class="selectUppercase fullpage">
       <mat-select [disabled]='!(isAdmin || editable_by.financingforms.includes(AuthenticatedUser))' name="financingforms" [(ngModel)]="financingforms" multiple>
           <mat-option *ngFor="let data of financingforms_data" [value]="data.id" >{{data.name}}</mat-option>
       </mat-select>
     </mat-form-field> <br>
+
+    <input [disabled]='!(isAdmin || editable_by.financingforms.includes(AuthenticatedUser))' (change)="addFinancingform($event)" placeholder="{{'nieuwe financieringsvorm' | translate}}">
+
 
           <div class="buttons-right">
             <button mat-button (click)="isExpandedValidate.financingforms = !isExpandedValidate.financingforms" class="button--validate"><i class="fa fa-check" aria-hidden="true"></i></button>    

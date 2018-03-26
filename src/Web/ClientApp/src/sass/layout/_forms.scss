@@ -168,6 +168,11 @@ mat-form-field.fullpage, mat-form-field.tags{
 }
 
 
+
+.ql-toolbar.ql-snow + .ql-container.ql-snow{
+    border: none;
+}
+
 .ql-toolbar.ql-snow{
     background-color: $white;
     border: none;

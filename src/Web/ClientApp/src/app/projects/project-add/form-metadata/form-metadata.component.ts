@@ -321,7 +321,6 @@ export class FormMetadataComponent implements OnInit {
         this.message.error = "Uw financieringsvorm is niet opgeslaan, gelieve opnieuw te proberen"
       }
     );
-    alert('test')
     // this.financingforms_data.push(event)
   }
 

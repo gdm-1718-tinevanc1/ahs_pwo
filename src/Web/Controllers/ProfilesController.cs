@@ -34,7 +34,7 @@ namespace Web.Controllers
         [HttpGet(Name = "GetProfiles")]
         public async Task<IActionResult> GetProfiles([FromQuery] Nullable<bool> withChildren)
         {
-            var model = (withChildren != null && withChildren == true)?await ApplicationDbContext.Profiles.ToListAsync():await ApplicationDbContext.Profiles.ToListAsync();
+            var model = (withChildren != null && withChildren == true)?await ApplicationDbContext.Profiles.OrderByDescending(o => o.CreatedAt).ToListAsync():await ApplicationDbContext.Profiles.OrderByDescending(o => o.CreatedAt).ToListAsync();
 
             /*var model = (withChildren != null && withChildren == true)?await ApplicationDbContext.Profiles.Include(l => l.Location.City.Country)
             .Include(a => a.AccomodationType).Include(a => a.AccomodationPrice).Include(a => a.RentalType)

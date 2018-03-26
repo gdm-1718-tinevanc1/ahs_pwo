@@ -30,22 +30,24 @@
       <h4>{{'Projectmedewerkers' | translate}}</h4>
       {{participants_type}}
 
-    <mat-grid-list class="row" *ngFor="let participant of Arr(AmountParticipant).fill(1); let i = index;" cols="2" rowHeight="2:1">
-      <mat-form-field class="col-sm-4 selectType">   <!-- [disabled]='!(isAdmin || editable_by.participants.includes(AuthenticatedUser))' -->
-            <mat-select [disabled]='!(isAdmin || editable_by.participants.includes(AuthenticatedUser))' name="participanttype" [(ngModel)]="participants_type[i]" (change)="changetype($event.value, i, 'new')"> <!-- [(ngModel)]="participants_type[i]"  -->
-               <mat-option *ngFor="let data of participants_data" [value]="data.typeParticipant"> {{data.typeParticipant}}</mat-option>
-            </mat-select>
-          </mat-form-field>
-
-          <div class="col-sm-8">
-              <mat-form-field class="form__value" > <!-- [disabled]='!(isAdmin || editable_by.participants.includes(AuthenticatedUser))'  -->
-                  <mat-select [disabled]='!(isAdmin || editable_by.participants.includes(AuthenticatedUser))' name="participantvalue" [(ngModel)]="participants[i]">
-                    <mat-option>None</mat-option>
-                    <mat-option *ngFor="let data of participants_filter_data[i]" [value]="data.id" >{{data.name}}</mat-option>
-                  </mat-select>
-                </mat-form-field>
-          </div>
-    </mat-grid-list>
+      <div *ngIf="participants_data" >
+          <mat-grid-list class="row" *ngFor="let participant of Arr(AmountParticipant).fill(1); let i = index;" cols="2" rowHeight="2:1">
+                  <mat-form-field class="col-sm-4 selectType">  
+                     <mat-select [disabled]='!(isAdmin || editable_by.participants.includes(AuthenticatedUser))' name="participanttype" [(ngModel)]="participants_type[i]" (change)="changetype($event.value, i, 'new')"> <!-- [(ngModel)]="participants_type[i]"  -->
+                       <mat-option *ngFor="let data of participants_data" [value]="data.typeParticipant"> {{data.typeParticipant}}</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+        
+                  <div class="col-sm-8" *ngIf="participants_filter_data[0]">
+                      <mat-form-field class="form__value" > <!-- [disabled]='!(isAdmin || editable_by.participants.includes(AuthenticatedUser))'  -->
+                          <mat-select [disabled]='!(isAdmin || editable_by.participants.includes(AuthenticatedUser))' name="participantvalue" [(ngModel)]="participants[i]">
+                            <mat-option>None</mat-option>
+                            <mat-option *ngFor="let data of participants_filter_data[i]" [value]="data.id" >{{data.name}}</mat-option>
+                          </mat-select>
+                        </mat-form-field>
+                  </div>
+            </mat-grid-list>
+      </div>
 
     <div class="buttons-right">
         <button mat-button class="button--validate" (click)="plusField('AmountParticipant')"><i class="fa fa-plus"></i></button>

@@ -5,4 +5,10 @@ export class Iprofile {
     public lastName: string;
     public email: string;
     public employeenumber: number;
+    public setting: {
+        id?: number | null;
+        language: string;
+        color: string;
+    }
+
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit, Directive, AfterViewInit, Input, ViewChild, ElementRef, ViewChildren, QueryList  } from '@angular/core';
-import {MatChipInputEvent, MatTabLinkBase} from '@angular/material';
+import {MatChipInputEvent} from '@angular/material';
 import {ENTER, COMMA} from '@angular/cdk/keycodes';
 import { ProjectService } from '../../../core/shared/services/project.service'
 import { TypeService } from '../../shared/services/type.service'
@@ -20,8 +20,7 @@ export class FormMetadataComponent implements OnInit {
   isAdmin = this.authenticationService.isAdmin;
   @ViewChildren('cmp') components: QueryList<ValidateComponent>;
   valueObject = JSON.stringify(this.sharedService.sharedNode.validateObject);
-  language = this.sharedService.sharedNode.language;
-
+  language: string;
   
   //tags options
   visible: boolean = true;
@@ -41,9 +40,9 @@ export class FormMetadataComponent implements OnInit {
 
   /* validate */ 
   isExpandedValidate = {
-    /* participant: false,
+    participant: false,
     tags: false,
-    financingforms: false */
+    financingforms: false
   };
   /* amount fields */
   AmountParticipant:number = 1;
@@ -86,6 +85,11 @@ export class FormMetadataComponent implements OnInit {
     links: []
   }
 
+  parseJsonPartnerValidate;
+  parseJsonParticipantValidate;
+  parseJsonFinancingformValidate;
+  parseJsonLinkValidate;
+
   constructor(
     private projectService:ProjectService,
     private typeService:TypeService,
@@ -97,25 +101,27 @@ export class FormMetadataComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.sharedService.language.subscribe((val: string) => {
+      this.language = val;
+    });
+// projectCredentials.financingformValidate.validate
     // this.projectCredentials = new Iproject();
     this.id = this.route.parent.snapshot.params.id;
     if(this.id){
       this.projectService.getProjectMetadataById(this.id).subscribe(
         project => { 
           this.projectCredentials = project
-          console.log(this.projectCredentials)
+
+          this.parseJsonPartnerValidate = JSON.parse(this.projectCredentials.partnerValidate.toString());
+          this.parseJsonParticipantValidate = JSON.parse(this.projectCredentials.participantValidate.toString());
+          this.parseJsonFinancingformValidate= JSON.parse(this.projectCredentials.financingformValidate.toString());
+          this.parseJsonLinkValidate = JSON.parse(this.projectCredentials.linkValidate.toString());
         
-          if(this.projectCredentials.participantValidate){
-            this.projectCredentials.partnerValidate = JSON.parse(this.projectCredentials.partnerValidate.toString());
-            this.projectCredentials.participantValidate = JSON.parse(this.projectCredentials.participantValidate.toString());
-            this.projectCredentials.financingformValidate = JSON.parse(this.projectCredentials.financingformValidate.toString());
-            this.projectCredentials.linkValidate = JSON.parse(this.projectCredentials.linkValidate.toString());
-          } else{
-            this.projectCredentials.partnerValidate = JSON.parse(this.valueObject);
-            this.projectCredentials.participantValidate = JSON.parse(this.valueObject);
-            this.projectCredentials.financingformValidate = JSON.parse(this.valueObject);
-            this.projectCredentials.linkValidate = JSON.parse(this.valueObject);
-          }
+          this.projectCredentials.partnerValidate = JSON.parse(this.projectCredentials.partnerValidate.toString());
+          this.projectCredentials.participantValidate = JSON.parse(this.projectCredentials.participantValidate.toString());
+          this.projectCredentials.financingformValidate= JSON.parse(this.projectCredentials.financingformValidate.toString());
+          this.projectCredentials.linkValidate = JSON.parse(this.projectCredentials.linkValidate.toString());
+
 
           if(project.participants.length) this.AmountParticipant = project.participants.length;
           if(project.financingforms.length) this.AmountFinancingsforms = project.financingforms.length;
@@ -135,10 +141,12 @@ export class FormMetadataComponent implements OnInit {
           // console.log('test:', this.participants_type)
           this.succes = "succes";
 
-          this.editable_by.partners = this.projectCredentials.partners.validate.editable_by.push(this.projectCredentials.profileId)
-          this.editable_by.participants = this.projectCredentials.participants.validate.editable_by.push(this.projectCredentials.profileId)
-          this.editable_by.financingforms = this.projectCredentials.financingforms.validate.editable_by.push(this.projectCredentials.profileId)
-          this.editable_by.links = this.projectCredentials.links.validate.editable_by.push(this.projectCredentials.profileId)
+          this.editable_by.partners = this.parseJsonPartnerValidate.validate.editable_by; this.editable_by.partners.push(project.profileId)
+          this.editable_by.participants = this.parseJsonParticipantValidate.validate.editable_by; this.editable_by.participants.push(project.profileId)
+          this.editable_by.financingforms = this.parseJsonFinancingformValidate.validate.editable_by; this.editable_by.financingforms.push(project.profileId)
+          this.editable_by.links = this.parseJsonLinkValidate.validate.editable_by; this.editable_by.links.push(project.profileId)
+
+
           }
         }
       )
@@ -293,27 +301,9 @@ export class FormMetadataComponent implements OnInit {
   }
 
   validate(){
-    var validates = [];
-    this.components.forEach(validate => validates.push(validate.validate));
-    if(this.succes === 'succes'){
-      if(typeof this.projectCredentials.participantValidate === 'object'){
-        if(this.language === 'nl'){
-          this.projectCredentials.partnerValidate.validate = validates[0]
-          this.projectCredentials.participantValidate.validate = validates[1]
-          this.projectCredentials.financingformValidate.validate = validates[2]
-          this.projectCredentials.linkValidate.validate = validates[3]   
-        } else{
-          this.projectCredentials.partnerValidate.validate = validates[0]
-          this.projectCredentials.participantValidate.validate = validates[1]
-          this.projectCredentials.financingformValidate.validate = validates[2]
-          this.projectCredentials.linkValidate.validate = validates[3]
-        }
-      // console.log(this.projectCredentials)
-      }
+    if(this.isAdmin){
+      this.save();
     }
-
-   this.save();
-
   }
 
   addFinancingform(event){

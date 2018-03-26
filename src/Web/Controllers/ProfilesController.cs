@@ -1,10 +1,19 @@
 using System;
+using System.IO; 
+
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity;
+// using Microsoft.AspNet.WebApi.Cors;
+using Microsoft.AspNetCore.Hosting;
+
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
+using Serilog;
+
 using Database;
 using Models;
 using Models.Security;
@@ -44,7 +53,7 @@ namespace Web.Controllers
         [HttpGet("{profileId:int}", Name = "GetprofileById")]
         public async Task<IActionResult> GetProfileById(Int16 profileId)
         {
-            var model = await ApplicationDbContext.Profiles.FirstOrDefaultAsync(o => o.Id == profileId);
+            var model = await ApplicationDbContext.Profiles.Include(s => s.Setting).FirstOrDefaultAsync(o => o.Id == profileId);
             if (model == null)
             {
                 var msg = String.Format(FAILGETENTITYBYID, profileId);
@@ -53,6 +62,21 @@ namespace Web.Controllers
             return new OkObjectResult(model);
         }
 
+
+        [HttpPost(Name = "CreateProfile")]
+        // [EnableCors("AllowAll")]
+        public async Task<IActionResult> CreateProfile([FromBody] Models.Profile item)
+       {
+            if(item == null)
+            {
+               return BadRequest();
+            }
+
+            ApplicationDbContext.Profiles.Add(item);
+            await ApplicationDbContext.SaveChangesAsync();
+
+           return this.CreatedAtRoute("GetProfileById", new { Controller = "ProfilesController", profileId = item.Id }, item);
+       }
 
 
         [HttpPut("{profileId:int}", Name = "UpdateProfile")]
@@ -70,6 +94,22 @@ namespace Web.Controllers
                 var msg = String.Format(FAILGETENTITYBYID, ProfileId);
                 return NotFound(msg);
             }
+
+            if (item.Image.StartsWith("assets/uploads") || item.Image.StartsWith("http://")) 
+            {
+                model.Image = item.Image;
+            } 
+            else {
+                var base64string = item.Image;
+                string converted = base64string.Replace("data:image/png;base64,", String.Empty);
+                converted = converted.Replace("data:image/jpeg;base64,", String.Empty);
+                var base64array = Convert.FromBase64String(converted);
+                var uploadPath = Path.Combine("ClientApp", "src", "assets", "user_images");
+
+                Directory.CreateDirectory(Path.Combine(uploadPath, model.Id.ToString()));
+                System.IO.File.WriteAllBytes(Path.Combine(uploadPath, model.Id.ToString(), ".jpg"), base64array);
+                model.Image = Path.Combine("assets", "user_images", model.Id.ToString(), ".jpg").ToString();
+             };
 
             ApplicationDbContext.Profiles.Attach(model);
             ApplicationDbContext.Entry(model).State = EntityState.Modified;

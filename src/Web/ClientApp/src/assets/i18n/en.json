@@ -100,8 +100,12 @@
     "Engels": "English",
     "Nederlands": "Dutch",
 
-
+    "nieuwe gebruiker": "new user",
     "nieuwe financieringsvorm": "new financingform",
-    "Selecteer financieringsvorm": "select financingform"
+    "Selecteer financieringsvorm": "select financingform",
+    "nieuwe gebruiker toevoegen": "add new user",
+    "nieuw project toevoegen": "add new project"
+
+
     
 }

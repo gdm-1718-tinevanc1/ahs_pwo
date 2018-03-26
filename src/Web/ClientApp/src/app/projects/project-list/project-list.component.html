@@ -1,27 +1,18 @@
   <div class="table projects__section">
-      <h4>Projects</h4>
+      <div class="button__add"><a routerLink="/project"><i class="fa fa-plus" aria-hidden="true"></i> {{ 'nieuw project toevoegen' | translate}} </a></div>
+     <div class="clear"></div>
+      <h4>Projects</h4> 
+
       <div class="search-container">
         <i class="fa fa-search"></i><input placeholder="{{'Zoeken' | translate}}" name="searchText" [(ngModel)]="searchText" class="search">
         <button mat-button class="button--down" [ngClass]="{'button--active': dropdownExpaned}" (click)="dropdownExpaned = !dropdownExpaned"><i class="fa fa-angle-down"></i></button>
         <div class="dropdown__filters" *ngIf="dropdownExpaned">
-          <ul>
-
-              <!-- <div *ngIf="isAdmin" class="states">
-                  <h4>{{'Status' | translate}}</h4>
-                  <mat-radio-group name="status" [(ngModel)]="projectCredentials.statusId">
-                      <mat-radio-button  *ngFor="let status of states" [value]="status.id"> {{ status.name |translate}}</mat-radio-button>
-                  </mat-radio-group>      
-              </div> -->
-              
+          <ul>          
               <mat-radio-group name="status" [(ngModel)]="statusValue">
                   <mat-radio-button  *ngFor="let status of states" [value]="status.id"> {{ status.name |translate}}</mat-radio-button>
                   <mat-radio-button  [value]="null"> {{ 'Alle' |translate}}</mat-radio-button>
               </mat-radio-group>  
-
-<!-- 
-              <li><mat-checkbox *ngFor="let status of states" (change)="updateCheckedOptions(status, $event)" value="{{status.id}}">{{ status.name |translate}}</mat-checkbox></li>
-              <li><mat-checkbox [(ngModel)]="filterSelectAll" (change)='toggleFilterAllCheckbox()'>{{'Alle'| translate}}</mat-checkbox></li> -->
-          </ul>
+            </ul>
         </div>
       </div>
         <table class="table table-lg">

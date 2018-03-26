@@ -379,6 +379,37 @@ namespace Database
                 .HasDefaultValueSql("GETDATE()")
                 .ValueGeneratedOnAddOrUpdate();
 
+            builder.Entity<Profile>()
+                .HasOne(l => l.Setting)
+                .WithOne()
+                .HasForeignKey<Profile>(l => l.SettingId);
+              
+
+              
+               // setting
+            builder.Entity<Setting>()
+                .HasKey(p => p.Id);
+
+            builder.Entity<Setting>()
+                .Property(p => p.Language)
+                .HasMaxLength(255)
+                .IsRequired();
+
+            builder.Entity<Setting>()
+                .Property(p => p.Color)
+                .HasMaxLength(255)
+                .IsRequired();
+
+            builder.Entity<Setting>()
+                .Property(a => a.CreatedAt)
+                .HasDefaultValueSql("GETDATE()")
+                .ValueGeneratedOnAdd();
+
+            builder.Entity<Setting>()
+                .Property(a => a.UpdatedAt)
+                .HasDefaultValueSql("GETDATE()")
+                .ValueGeneratedOnAddOrUpdate();
+
       
               // projectmedia
             builder.Entity<Media>()

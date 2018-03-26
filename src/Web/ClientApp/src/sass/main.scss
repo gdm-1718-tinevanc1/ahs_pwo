@@ -4,7 +4,8 @@
 
 //imports
 @import 'abstract/variables';
-@include angular-material-theme($pwo-material-theme);
+@include angular-material-theme($pwo-material-theme_blue);
+// @include angular-material-theme($pwo-material-theme_orange);
 
 
 

@@ -19,9 +19,11 @@ namespace Models
         
         public Int32 Employeenumber { get; set; }
 
+        public Nullable<Int32> SettingId { get; set; }
+        public Setting Setting { get; set; }
+
         public List<Task> Tasks { get; set; }
         public List<ProjectProfile> Projects { get; set; }
-        // public List<Project> Projects { get; set; }
 
         public DateTime CreatedAt { get; set; }
         public Nullable<DateTime> UpdatedAt { get; set; }
@@ -29,3 +31,7 @@ namespace Models
 
     }
 }
+
+
+
+

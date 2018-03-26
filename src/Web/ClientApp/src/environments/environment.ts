@@ -24,7 +24,8 @@ export const environment = {
       links: '/links',
       profiles: '/profiles',
       states: '/states',
-      tasks: '/tasks'
+      tasks: '/tasks',
+      settings: '/settings'
     }
   }
 };

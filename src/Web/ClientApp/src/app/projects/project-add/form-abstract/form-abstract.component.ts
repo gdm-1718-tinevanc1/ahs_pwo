@@ -38,6 +38,9 @@ export class FormAbstractComponent implements OnInit {
     abstract: []
   }
 
+  parseJsonAbstract;
+
+
   constructor(
     private projectService:ProjectService,
     private sharedService:SharedService,
@@ -57,12 +60,13 @@ export class FormAbstractComponent implements OnInit {
         project => { 
           this.projectCredentials = project
           this.projectCredentials.abstract = this.projectCredentials.abstract.toString().replace(/(\r\n\t|\n|\r\t)/gm,"");
+          this.parseJsonAbstract = JSON.parse(project.abstract.toString());
           this.projectCredentials.abstract = JSON.parse(this.projectCredentials.abstract.toString());
 
           if(this.language === 'nl'){
-            this.editable_by.abstract = this.projectCredentials.abstract.nl.validate.editable_by; this.editable_by.abstract.push(project.profileId)
+            this.editable_by.abstract = this.parseJsonAbstract.nl.validate.editable_by; this.editable_by.abstract.push(project.profileId)
           } else{
-            this.editable_by.abstract = this.projectCredentials.abstract.en.validate.editable_by; this.editable_by.abstract.push(project.profileId)
+            this.editable_by.abstract = this.parseJsonAbstract.en.validate.editable_by; this.editable_by.abstract.push(project.profileId)
           }
         }
       )
@@ -93,16 +97,18 @@ export class FormAbstractComponent implements OnInit {
   }
 
   validate(){
-    var validates = [];
+    /* var validates = [];
     this.components.forEach(validate => validates.push(validate.validate));
     if(this.language === 'nl'){
       this.projectCredentials.abstract.nl.validate = validates[0] 
     } else{
       this.projectCredentials.abstract.en.validate = validates[0]
-    }
+    } */
 
 /*     this.projectCredentials.abstract.nl.validate = validates[0]
  */     // console.log(this.projectCredentials)
-    this.save();
+    if(this.isAdmin){
+      this.save();
+    }  
   }
 }

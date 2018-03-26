@@ -53,6 +53,11 @@ export class FormGeneralComponent implements OnInit {
     date: []
   }
 
+  parseJsonTitle;
+  parseJsonSubtitle;
+  parseJsonShorttitle;
+  parseJsonDescription;
+
   constructor(
     private projectService:ProjectService,
     private statusService:StatusService,
@@ -78,22 +83,29 @@ export class FormGeneralComponent implements OnInit {
       this.projectService.getProjectGeneralById(this.id).subscribe(
         project => { 
           this.projectCredentials = project
-          console.log(this.projectCredentials)
+
+          this.parseJsonTitle = JSON.parse(this.projectCredentials.title);
+          this.parseJsonSubtitle = JSON.parse(this.projectCredentials.subtitle);
+          this.parseJsonShorttitle = JSON.parse(this.projectCredentials.shorttitle);
+          this.parseJsonDescription = JSON.parse(this.projectCredentials.description);
+
           this.projectCredentials.title = JSON.parse(this.projectCredentials.title.toString());
           this.projectCredentials.subtitle = JSON.parse(this.projectCredentials.subtitle.toString());
           this.projectCredentials.shorttitle = JSON.parse(this.projectCredentials.shorttitle.toString());
           this.projectCredentials.description = JSON.parse(this.projectCredentials.description.toString());
+
           this.editable_by.date.push(project.profileId)
           if(this.language === 'nl'){
-            this.editable_by.title = this.projectCredentials.title.nl.validate.editable_by; this.editable_by.title.push(project.profileId)
-            this.editable_by.subtitle = this.projectCredentials.subtitle.nl.validate.editable_by; this.editable_by.subtitle.push(project.profileId)
-            this.editable_by.shorttitle = this.projectCredentials.shorttitle.nl.validate.editable_by; this.editable_by.shorttitle.push(project.profileId)
-            this.editable_by.description = this.projectCredentials.description.nl.validate.editable_by; this.editable_by.description.push(project.profileId)
+
+            this.editable_by.title = this.parseJsonTitle.nl.validate.editable_by; this.editable_by.title.push(project.profileId)
+            this.editable_by.subtitle = this.parseJsonSubtitle.nl.validate.editable_by; this.editable_by.subtitle.push(project.profileId)
+            this.editable_by.shorttitle = this.parseJsonShorttitle.nl.validate.editable_by; this.editable_by.shorttitle.push(project.profileId)
+            this.editable_by.description = this.parseJsonDescription.nl.validate.editable_by; this.editable_by.description.push(project.profileId)
           } else{
-            this.editable_by.title = this.projectCredentials.title.nl.validate.editable_by; this.editable_by.title.push(project.profileId)
-            this.editable_by.subtitle = this.projectCredentials.subtitle.nl.validate.editable_by; this.editable_by.subtitle.push(project.profileId)
-            this.editable_by.shorttitle = this.projectCredentials.shorttitle.nl.validate.editable_by; this.editable_by.shorttitle.push(project.profileId)
-            this.editable_by.description = this.projectCredentials.description.nl.validate.editable_by; this.editable_by.description.push(project.profileId)
+            this.editable_by.title = this.parseJsonTitle.nl.validate.editable_by; this.editable_by.title.push(project.profileId)
+            this.editable_by.subtitle = this.parseJsonSubtitle.nl.validate.editable_by; this.editable_by.subtitle.push(project.profileId)
+            this.editable_by.shorttitle = this.parseJsonShorttitle.nl.validate.editable_by; this.editable_by.shorttitle.push(project.profileId)
+            this.editable_by.description = this.parseJsonDescription.nl.validate.editable_by; this.editable_by.description.push(project.profileId)
           }
         }
       )
@@ -134,9 +146,12 @@ export class FormGeneralComponent implements OnInit {
   }
 
   validate(){
-    var validates = [];
+    /* var validates = [];
+    console.log(this.components.length)
+    this.components.forEach(validate => console.log(validate));
     this.components.forEach(validate => validates.push(validate.validate));
     // if(typeof this.projectCredentials === 'object'){
+
       if(this.language === 'nl'){
         this.projectCredentials.title.nl.validate = validates[0]
         this.projectCredentials.shorttitle.nl.validate = validates[1]
@@ -144,13 +159,32 @@ export class FormGeneralComponent implements OnInit {
         this.projectCredentials.description.nl.validate = validates[3]  
       } else{
         this.projectCredentials.title.en.validate = validates[0]
-        this.projectCredentials.shorttitle.en.validate = validates[1]
+        this.projectCredentials.shorttitle.en.validate = validates[1] 
         this.projectCredentials.subtitle.en.validate = validates[2]
         this.projectCredentials.description.en.validate = validates[3] 
       }
-    //}
+ */
+      /* 
+      if(this.language === 'nl'){
+        this.parseJsonTitle.nl.validate = validates[0]
+        this.parseJsonShorttitle.nl.validate = validates[1]
+        this.parseJsonSubtitle.nl.validate = validates[2]
+        this.parseJsonDescription.nl.validate = validates[3]  
+      } else{
+        this.parseJsonTitle.en.validate = validates[0]
+        this.parseJsonShorttitle.en.validate = validates[1]
+        this.parseJsonSubtitle.en.validate = validates[2]
+        this.parseJsonDescription.en.validate = validates[3] 
+      }
       
-    this.save();
+      this.projectCredentials.title = this.parseJsonTitle;
+      this.projectCredentials.shorttitle = this.parseJsonShorttitle;
+      this.projectCredentials.subtitle = this.parseJsonSubtitle;
+      this.projectCredentials.description = this.parseJsonDescription; */
+
+      if(this.isAdmin){
+        this.save();
+      }
 
   }
 

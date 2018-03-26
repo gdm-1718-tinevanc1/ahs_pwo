@@ -30,15 +30,23 @@ export class ProfileService {
       return this.put(profile);
     } 
   }
+*/
 
-  private put(profile) {
+  postProfile(profile) {
+  let httpOptions = new Headers({
+    'Content-Type': 'application/json'
+  });
+    
+    return this._httpClient.post<Iprofile>(`${ this._apiEndPoint}`, profile )
+  }
+
+  updateProfile(profile) {
     let httpOptions = new Headers({
       'Content-Type': 'application/json'
     });
     
-    return this._httpClient.put<Iprofile>(`${ this._apiEndPoint }`, profile )
-
-  } */
+    return this._httpClient.put<Iprofile>(`${ this._apiEndPoint + '/' + profile.id }`, profile )
+  }
 
 }
 

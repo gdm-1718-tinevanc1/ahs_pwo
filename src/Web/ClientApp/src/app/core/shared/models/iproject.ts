@@ -17,7 +17,6 @@ export class Iproject {
     public participants: Array<any>;
     public budget: Array<any>;
     public publications: Array<any>;
-    // public spearheads: Array<any>;
     public tags: Array<any>;
     public partners: Array<any>;
     public links: Array<any>;
@@ -27,3 +26,5 @@ export class Iproject {
     public financingforms: Array<any>;
 
 }
+
+

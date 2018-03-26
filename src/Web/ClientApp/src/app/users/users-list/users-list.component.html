@@ -1,4 +1,6 @@
 <div class="user__section">
+  <div class="button__add"><a routerLink="/user"><i class="fa fa-plus" aria-hidden="true"></i> {{ 'nieuwe gebruiker toevoegen' | translate}} </a></div>
+  <div class="clear"></div>
   <h4>{{'Gebruikers' | translate}}</h4>
   <div class="search-container">
     <i class="fa fa-search"></i><input placeholder="{{'Zoeken' | translate}}" [(ngModel)]="searchText" class="search">

@@ -32,10 +32,56 @@ $mat-pwo-blue: (
   )
 );
 
+$mat-pwo-orange: (
+  50 : #fffdf8,
+  100 : #ffe1ac,
+  200 : #ffcd74,
+  300 : #ffb42c,
+  400 : #ffa90e,
+  500 : #ee9900,
+  600 : #cf8500,
+  700 : #b17200,
+  800 : #925e00,
+  900 : #744a00,
+  A100 : #fff9ee,
+  A200 : #ffd488,
+  A400 : #ffb022,
+  A700 : #ffa708,
+  contrast: (
+      50 : #000000,
+      100 : #000000,
+      200 : #000000,
+      300 : #000000,
+      400 : #000000,
+      500 : #000000,
+      600 : #000000,
+      700 : #000000,
+      800 : #000000,
+      900 : #000000,
+      A100 : #000000,
+      A200 : #000000,
+      A400 : #000000,
+      A700 : #000000,
+  )
+);
+
+/* //blue
 $primary-color: #00AACC;
 $secondary-color: #00CAE5;
-$background-grey: #F3F2F6;
 
+//orange
+/* $primary-color: #CC820A;
+$secondary-color: #ECAA3F; */
+
+:root {
+  --primary-color: #00AACC;
+  --secondary-color: #00CAE5;
+}
+
+$primary-color: var(--primary-color);
+$secondary-color: var(--secondary-color);
+
+$background-grey: #F3F2F6;
 $background-secondnav: #DEDDDF;
 
 $error-color: #AF0000;
@@ -50,7 +96,13 @@ $black: #000000;
 
 $pwo-material-primary-palette: mat-palette($mat-pwo-blue);
 $pwo-material-accent-palette:  mat-palette($mat-pwo-blue);
+
+
+$pwo-material-primary-palette-orange: mat-palette($mat-pwo-orange);
+$pwo-material-accent-palette-orange:  mat-palette($mat-pwo-orange);
+
 // $pwo-material-warn-palette:    mat-palette($warning-color);
 
 // Create the theme object (a Sass map containing all of the palettes).
-$pwo-material-theme: mat-light-theme($pwo-material-primary-palette, $pwo-material-accent-palette);
+$pwo-material-theme_blue: mat-light-theme($pwo-material-primary-palette, $pwo-material-accent-palette);
+$pwo-material-theme_orange: mat-light-theme($pwo-material-primary-palette, $pwo-material-accent-palette);

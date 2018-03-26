@@ -6,6 +6,8 @@ import { UsersListComponent } from './users-list/users-list.component';
 import { MaterialModule } from '../core/material/material.module';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { SharedModule } from '../shared/shared.module';
+import { UsersAddComponent } from '../users/users-add/users-add.component';
+import { AppRoutingModule } from '../app-routing.module';
 
 @NgModule({
   imports: [
@@ -14,10 +16,12 @@ import { SharedModule } from '../shared/shared.module';
     MaterialModule,
     NgxPaginationModule,
     CoreModule,
-    SharedModule
+    SharedModule,
+    AppRoutingModule
   ],
   declarations: [
     UsersListComponent,
+    UsersAddComponent,
   ],
   exports: [
   ],

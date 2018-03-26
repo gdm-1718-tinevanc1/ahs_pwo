@@ -28,8 +28,6 @@ namespace Web.Controllers
         [HttpGet(Name = "GetTasks")]
         public async Task<IActionResult> GetTasks([FromQuery] Nullable<bool> withChildren)
         {
-            // var model = await ApplicationDbContext.Locations.Include(c => c.City.Country).Include(a => a.Activities).ToListAsync();
-
             var model = await ApplicationDbContext.Tasks.Include(p => p.Project).OrderByDescending(o => o.CreatedAt).Where(o => o.Project.StatusId == 3).ToListAsync();
 
             if (model == null)

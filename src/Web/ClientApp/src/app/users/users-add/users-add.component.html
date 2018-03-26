@@ -1,0 +1,13 @@
+<div class="container">
+    <div>
+        <mat-form-field class="task__select">
+            <mat-select name="users" placeholder="Gebruiker" [(ngModel)]="credentials">
+              <mat-option>None</mat-option>
+              <mat-option *ngFor="let user of users" [value]="user" >{{user.mail}}</mat-option>
+            </mat-select>
+          </mat-form-field>
+    
+    </div>
+    
+    <button class="button--save" (click)="save()" mat-button>{{'Opslaan' | translate}}</button>    
+</div>

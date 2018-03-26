@@ -1,4 +1,10 @@
 <div class="settings">
+    <div class="message">
+        <div *ngIf="message.succes" class="notif--succes"> <i class="fa fa-check"></i> {{message.succes}}</div>
+        <div *ngIf="message.error" class="notif--error"> <i class="fa fa-times"></i> {{message.error}}</div>
+        <div *ngIf="message.warning" class="notif--warning"> <i class="fa fa-exclamation-triangle"></i> {{message.warning}}</div>
+        <div class="clear"></div>
+    </div>
     <mat-accordion class="button--upload">
         <mat-expansion-panel>
           <mat-expansion-panel-header>
@@ -7,20 +13,20 @@
                     {{'Standaardtaal' |translate}}
                 </mat-panel-title>
           </mat-expansion-panel-header>
-          <mat-radio-group>
+          <mat-radio-group [(ngModel)]="credentials.setting.language">
               <mat-radio-button (click)="switchLanguage('nl')" value="nl"> {{'Nederlands' |translate}}</mat-radio-button>
               <mat-radio-button (click)="switchLanguage('en')" value="en">{{'Engels' |translate}}</mat-radio-button>
           </mat-radio-group>
         </mat-expansion-panel>
     </mat-accordion>
-    
+<!--     
     <div class="row">
         <button class="button--upload">
             <i class="fa fa-font icon" aria-hidden="true"></i>
             {{'Tekstgrootte' |translate}}
             <mat-slider></mat-slider>
         </button>
-    </div>
+    </div> -->
     
     <mat-accordion class="button--upload">
         <mat-expansion-panel>
@@ -30,8 +36,8 @@
                     {{'Kleur' |translate}}
                 </mat-panel-title>
           </mat-expansion-panel-header>
-          <mat-radio-group>
-              <mat-radio-button value="bleu">{{'Blauw' |translate}}</mat-radio-button>
+          <mat-radio-group [(ngModel)]="credentials.setting.color" (change)="changeColor()">
+              <mat-radio-button value="blue">{{'Blauw' |translate}}</mat-radio-button>
               <mat-radio-button value="orange">{{'Oranje' |translate}}</mat-radio-button>
           </mat-radio-group>
         </mat-expansion-panel>
@@ -52,6 +58,6 @@
         </mat-expansion-panel>
     </mat-accordion>
     
-    <button class="button--save" mat-button>{{'Opslaan' |translate}}</button>
+    <button class="button--save" (click)="save()" mat-button>{{'Opslaan' |translate}}</button>
     
 </div>

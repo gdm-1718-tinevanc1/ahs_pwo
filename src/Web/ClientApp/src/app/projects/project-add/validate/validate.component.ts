@@ -25,7 +25,7 @@ export class ValidateComponent implements OnInit  {
 
 
   ngOnInit(){
-    this.validate.validated_by = this.authenticationService.profileId;
+    // this.validate.validated_by = this.authenticationService.profileId;
     this.profileService.getProfiles().subscribe(
       result => { this.profiles = result },
       err => console.log('err')

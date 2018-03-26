@@ -66,8 +66,8 @@ export class FormBudgetComponent implements OnInit {
         project => { 
           this.projectCredentials = project
           this.projectCredentials.budgetValidate = JSON.parse(this.projectCredentials.budgetValidate.toString());
-          
-          this.editable_by.budget = this.projectCredentials.budget.validate.editable_by.push(this.projectCredentials.profileId)
+
+          this.editable_by.budget = this.projectCredentials.budget.validate.editable_by; this.editable_by.budget.push(project.profileId)
 
           if(!project.budget){
             this.projectCredentials.budget = {
@@ -112,11 +112,13 @@ export class FormBudgetComponent implements OnInit {
   }
 
   validate(){
-    var validates = [];
+    /* var validates = [];
     this.components.forEach(validate => validates.push(validate.validate));
-/*     this.projectCredentials.budgetValidate.validate = validates[0]
- */    console.log(this.projectCredentials.budgetValidate)
-
-    this.save();
+    this.projectCredentials.budgetValidate.validate = validates[0]
+    console.log(this.projectCredentials.budgetValidate)
+ */
+    if(this.isAdmin){
+      this.save();
+    }
   }
 }

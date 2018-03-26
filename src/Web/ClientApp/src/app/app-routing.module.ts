@@ -8,6 +8,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 
 import { SettingsComponent } from './settings/settings.component'
 import { UsersListComponent} from './users/users-list/users-list.component'
+import { UsersAddComponent } from './users/users-add/users-add.component'
 
 import { ProjectListComponent } from './projects/project-list/project-list.component'
 import { ProjectAddComponent } from './projects/project-add/project-add.component'
@@ -34,6 +35,7 @@ const routes: Routes = [
   { path: 'projects', component:ProjectListComponent},
   { path: 'project', component:ProjectAddComponent, children: children_project},
   { path: 'project/:id', component:ProjectAddComponent, children: children_project},
+  { path: 'user', component:UsersAddComponent},
   { path: 'settings', component:SettingsComponent, data: { title: 'Settings' }},
   { path: 'profiles', component:UsersListComponent}
 ];

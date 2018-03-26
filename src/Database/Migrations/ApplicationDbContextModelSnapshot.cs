@@ -302,6 +302,10 @@ namespace Database.Migrations
                         .IsRequired()
                         .HasMaxLength(255);
 
+                    b.Property<int?>("SettingId");
+
+                    b.Property<int?>("SettingId1");
+
                     b.Property<DateTime?>("UpdatedAt")
                         .ValueGeneratedOnAddOrUpdate()
                         .HasDefaultValueSql("GETDATE()");
@@ -311,6 +315,12 @@ namespace Database.Migrations
                         .HasMaxLength(255);
 
                     b.HasKey("Id");
+
+                    b.HasIndex("SettingId")
+                        .IsUnique()
+                        .HasFilter("[SettingId] IS NOT NULL");
+
+                    b.HasIndex("SettingId1");
 
                     b.ToTable("Profiles");
                 });
@@ -556,6 +566,34 @@ namespace Database.Migrations
                     b.ToTable("AspNetUsers");
                 });
 
+            modelBuilder.Entity("Models.Setting", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Color")
+                        .IsRequired()
+                        .HasMaxLength(255);
+
+                    b.Property<DateTime>("CreatedAt")
+                        .ValueGeneratedOnAdd()
+                        .HasDefaultValueSql("GETDATE()");
+
+                    b.Property<DateTime?>("DeletedAt");
+
+                    b.Property<string>("Language")
+                        .IsRequired()
+                        .HasMaxLength(255);
+
+                    b.Property<DateTime?>("UpdatedAt")
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasDefaultValueSql("GETDATE()");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Setting");
+                });
+
             modelBuilder.Entity("Models.Status", b =>
                 {
                     b.Property<long>("Id")
@@ -707,6 +745,17 @@ namespace Database.Migrations
                         .WithMany("Partners")
                         .HasForeignKey("ProjectId")
                         .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("Models.Profile", b =>
+                {
+                    b.HasOne("Models.Setting", "Setting")
+                        .WithOne()
+                        .HasForeignKey("Models.Profile", "SettingId");
+
+                    b.HasOne("Models.Setting")
+                        .WithMany("Profile")
+                        .HasForeignKey("SettingId1");
                 });
 
             modelBuilder.Entity("Models.Project", b =>

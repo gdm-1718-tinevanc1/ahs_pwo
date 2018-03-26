@@ -31,7 +31,6 @@ namespace Models
         public List<ProjectPublication> Publications { get; set; }
         public List<ProjectFinancingform> Financingforms { get; set; }
 
-        // public List<ProjectSpearhead> Spearheads { get; set; }
         public List<Link> Links { get; set; }
         public List<Tag> Tags { get; set; }
         public List<Partner> Partners { get; set; }

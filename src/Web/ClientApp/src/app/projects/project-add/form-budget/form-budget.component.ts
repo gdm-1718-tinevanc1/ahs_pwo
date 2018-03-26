@@ -67,7 +67,7 @@ export class FormBudgetComponent implements OnInit {
           this.projectCredentials = project
           this.projectCredentials.budgetValidate = JSON.parse(this.projectCredentials.budgetValidate.toString());
 
-          this.editable_by.budget = this.projectCredentials.budget.validate.editable_by; this.editable_by.budget.push(project.profileId)
+          // this.editable_by.budget = this.projectCredentials.budget.validate.editable_by; this.editable_by.budget.push(project.profileId)
 
           if(!project.budget){
             this.projectCredentials.budget = {

@@ -60,7 +60,7 @@ namespace Web.Controllers
 
             // Create an instance to the PDF file by creating an instance of the PDF 
             // Writer class using the document and the filestrem in the constructor.
-             PdfWriter writer = PdfWriter.GetInstance(document, fs);
+            PdfWriter writer = PdfWriter.GetInstance(document, fs);
  
             /*  MemoryStream memory = new MemoryStream();
 

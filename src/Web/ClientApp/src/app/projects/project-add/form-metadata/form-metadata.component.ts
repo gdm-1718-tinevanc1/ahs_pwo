@@ -67,7 +67,7 @@ export class FormMetadataComponent implements OnInit {
     participantValidate: this.valueObject,
     financingformValidate: this.valueObject,
     linkValidate: this.valueObject,
-    profileId: this.authenticationService.profileId
+    profiles: [{profileId: this.authenticationService.profileId}]
   };
 // type MyArrayType = Array<{id: number, text: string}>;
 

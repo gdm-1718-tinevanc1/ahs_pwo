@@ -32,7 +32,7 @@ export class FormAbstractComponent implements OnInit {
   id: number;
   projectCredentials = {
     abstract: this.valueObject,
-    profileId: this.authenticationService.profileId
+    profiles: [{profileId: this.authenticationService.profileId}]
   };
 
   editable_by  = {

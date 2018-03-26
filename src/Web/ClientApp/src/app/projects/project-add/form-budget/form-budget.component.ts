@@ -55,7 +55,7 @@ export class FormBudgetComponent implements OnInit {
         operatingBudget: null,
         investmentBudget: null,
         staffBudget: null,
-        profileId: this.authenticationService.profileId
+        profiles: [{profileId: this.authenticationService.profileId}]
     }
     this.id = this.route.parent.snapshot.params.id;
     if(this.id){
@@ -74,7 +74,7 @@ export class FormBudgetComponent implements OnInit {
               operatingBudget: null,
               investmentBudget: null,
               staffBudget: null,
-              profileId: this.authenticationService.profileId,
+              profiles: [{profileId: this.authenticationService.profileId}]
             }
           } 
         }

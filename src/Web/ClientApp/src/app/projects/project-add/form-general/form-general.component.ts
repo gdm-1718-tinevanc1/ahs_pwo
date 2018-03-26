@@ -35,7 +35,7 @@ export class FormGeneralComponent implements OnInit {
     description: this.valueObject,
     startdate: null,
     enddate: null,
-    profileId: this.authenticationService.profileId,
+    profiles: [{profileId: this.authenticationService.profileId}],
     statusId: 2
   };
   states: {};

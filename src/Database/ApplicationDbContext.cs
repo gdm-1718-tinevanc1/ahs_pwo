@@ -20,19 +20,15 @@ namespace Database
         public DbSet<Media> Mediums { get; set; }
         public DbSet<Status> States { get; set; }
         public DbSet<Publication> Publications { get; set; }
-        // public DbSet<Spearhead> Spearheads { get; set; }
         public DbSet<Tag> Tags { get; set; }
         public DbSet<Task> Tasks { get; set; }
         public DbSet<Budget> Budgets { get; set; }
         public DbSet<Partner> Partners { get; set; }
 
         public DbSet<ProjectProfile> ProjectProfile { get; set; }
-        //public DbSet<ProjectLink> ProjectLinks { get; set; }
-        //public DbSet<ProjectTag> ProjectTags { get; set; }
         public DbSet<ProjectParticipant> ProjectParticipant { get; set; }
         public DbSet<ProjectPublication> ProjectPublication { get; set; }
         public DbSet<ProjectFinancingform> ProjectFinancingform { get; set; }
-        // public DbSet<ProjectSpearhead> ProjectSpearheads { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
         {

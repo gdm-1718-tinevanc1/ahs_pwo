@@ -14,7 +14,6 @@
             <input [disabled]='!(isAdmin || editable_by.title.includes(AuthenticatedUser))' id="title" name="title" type="text" maxlength="255" name="title" *ngIf="projectCredentials.title && projectCredentials.title.nl" [(ngModel)]="projectCredentials.title.nl.value" />
             <button mat-button (click)="isExpandedValidate.title = !isExpandedValidate.title" class="button--validate"><i class="fa fa-check" aria-hidden="true"></i></button>
             <app-validate class="input" #cmp *ngIf="projectCredentials.title.en" [projectCredentials]="projectCredentials.title.nl.validate"  [hidden]='!isExpandedValidate.title'></app-validate>
-            <!--  *ngIf="isExpandedValidate.title" -->
             
           </div>
           <div>
@@ -33,7 +32,6 @@
     
           <div>
             <h4>{{'Beschrijving'| translate}}</h4>
-             <!-- read-only="true" enable="false" enable="false" contenteditable="false" disable="true" disabled  disabled="disabled"  -->
             <quill-editor [disabled]='!(isAdmin || editable_by.description.includes(AuthenticatedUser))' class="quill-editor" [style]="{height: '200px'}" name="description" *ngIf="projectCredentials.description && projectCredentials.description.nl" [(ngModel)]="projectCredentials.description.nl.value"><div quill-editor-toolbar>
                 <span class="ql-formats">
                     <select class="ql-size" [title]="'Size'">
@@ -80,7 +78,6 @@
           <input [disabled]='!(isAdmin || editable_by.title.includes(AuthenticatedUser))' id="title" name="title" type="text" maxlength="255" name="title" *ngIf="projectCredentials.title && projectCredentials.title.en" [(ngModel)]="projectCredentials.title.en.value" />
           <button mat-button (click)="isExpandedValidate.title = !isExpandedValidate.title" class="button--validate"><i class="fa fa-check" aria-hidden="true"></i></button>
           <app-validate class="input" #cmp *ngIf="projectCredentials.title.en" [projectCredentials]="projectCredentials.title.en.validate"  [hidden]='!isExpandedValidate.title'></app-validate>
-          <!--  *ngIf="isExpandedValidate.title" -->
         </div>
 
         <div>

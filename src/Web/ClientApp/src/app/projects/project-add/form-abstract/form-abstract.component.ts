@@ -98,16 +98,6 @@ export class FormAbstractComponent implements OnInit {
   }
 
   validate(){
-    /* var validates = [];
-    this.components.forEach(validate => validates.push(validate.validate));
-    if(this.language === 'nl'){
-      this.projectCredentials.abstract.nl.validate = validates[0] 
-    } else{
-      this.projectCredentials.abstract.en.validate = validates[0]
-    } */
-
-/*     this.projectCredentials.abstract.nl.validate = validates[0]
- */     // console.log(this.projectCredentials)
     if(this.isAdmin){
       this.save();
     }  

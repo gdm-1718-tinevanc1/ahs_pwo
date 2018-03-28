@@ -12,12 +12,6 @@ using Bogus.DataSets;
 using Bogus.Extensions;
 using Microsoft.Extensions.Logging;
 
-// using Microsoft.EntityFrameworkCore;
-// using Microsoft.EntityFrameworkCore.Metadata;
-// using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-// using OpenIddict;
-// using Npgsql.EntityFrameworkCore.PostgreSQL;
-// using Models.Security;
 
 namespace Database
 {
@@ -25,7 +19,6 @@ namespace Database
     {
        public static void Initialize(IServiceProvider serviceProvider)
         {
-            // context.Database.EnsureCreated();
            using (var context = serviceProvider.GetRequiredService<ApplicationDbContext>())
            {
                 var random = new Random();
@@ -73,17 +66,6 @@ namespace Database
                     });
                   context.SaveChangesAsync().Wait();
                 }
-
-
-               /* if(!context.Spearheads.Any())
-                {
-                  context.Spearheads.AddRange(new List<Spearhead>()
-                    {
-                      new Spearhead { Name = "ondernemingschap", Description = "ondernemerschap, organisatie en competenties"},
-                      new Spearhead { Name = "zorg", Description = "zorg, welzijn en zelfredzaamheid"}
-                    });
-                  context.SaveChangesAsync().Wait();
-                } */
 
 
                 if(!context.Budgets.Any()) 
@@ -137,12 +119,10 @@ namespace Database
                     var projects = new List<Project>();
                     var budgets = context.Budgets.ToList();
                     var states = context.States.ToList();
-                    // var profiles = context.Profiles.ToList();
 
                     for(var i = 0; i < 50; i++)
                     {
                         var project = projectSkeleton.Generate();
-                        // project.ProfileId = profiles[random.Next(profiles.Count - 1)].Id;
                         project.BudgetId = budgets[i].Id;
                         project.StatusId = states[random.Next(states.Count - 1)].Id;
 
@@ -181,32 +161,6 @@ namespace Database
                     context.SaveChangesAsync().Wait();
                 }
 
-
-
-                /*if(!context.Mediums.Any()) 
-                {
-                    var mediaSkeleton = new Faker<Models.Media>()
-                        .RuleFor(c => c.Image, f => f.Image.Image())
-                        .RuleFor(c => c.TypeMedia, TypeMedia.PrimaryImage)
-                        .FinishWith((f, u) =>
-                        {
-                            Console.WriteLine("Mediums created with Bogus: {0}!", u.Id);
-                        });
-                   
-                    var mediums = new List<Media>();
-                    var projects = context.Projects.ToList();
-
-                    for(var i = 0; i < 50; i++)
-                    {
-                        var media = mediaSkeleton.Generate();
-                        media.ProjectId = projects[i].Id;
-
-                        mediums.Add(media);
-                    }
-
-                    context.Mediums.AddRange(mediums);
-                    context.SaveChangesAsync().Wait();
-                } */
 
                 if(!context.Tags.Any())
                 {
@@ -282,17 +236,15 @@ namespace Database
 
          private static string objectValue(string value)
         {
-            // var result ="\"{\\\"nl\\\": { \\\"value\\\": \\\" " + value + " \\\", \\\"validate\\\": {\\\"allow_changes\\\":  false, \\\"required\\\": false, \\\"publication_ok\\\": false, \\\"validated_by\\\": null, \\\"feedback\\\": null, \\\"visible_to\\\": [] }}}\"";
             var result ="\"{\\\"nl\\\": { \\\"value\\\": \\\" " + value + " \\\", \\\"validate\\\": {\\\"allow_changes\\\":  false, \\\"required\\\": false, \\\"publication_ok\\\": false, \\\"validated_by\\\": null,  \\\"editable_by\\\": [], \\\"feedback\\\": null, \\\"visible_to\\\": null }}, \\\"en\\\": { \\\"value\\\": \\\" " + value + " \\\", \\\"validate\\\": {\\\"allow_changes\\\":  false, \\\"required\\\": false, \\\"publication_ok\\\": false, \\\"validated_by\\\": null,  \\\"editable_by\\\": null, \\\"feedback\\\": null, \\\"visible_to\\\": null }}}\"";
 
-            // eng
             return result;
         }
 
         private static string objectValidate()
         {
             var result ="\"{ \\\"validate\\\": {\\\"allow_changes\\\":  false, \\\"required\\\": false, \\\"publication_ok\\\": false, \\\"validated_by\\\": null, \\\"editable_by\\\": [], \\\"feedback\\\": null, \\\"visible_to\\\": null }}\"";
-            // eng
+
             return result;
         }
     }

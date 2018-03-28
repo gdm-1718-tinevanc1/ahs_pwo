@@ -15,9 +15,6 @@ namespace Models
 
         public TypeMedia TypeMedia { get; set; }
 
-   /*      [JsonIgnore] 
-        public List<Project> Projects { get; set; }
- */
         public Int64 ProjectId { get; set; }
         public Project Project { get; set; }
 

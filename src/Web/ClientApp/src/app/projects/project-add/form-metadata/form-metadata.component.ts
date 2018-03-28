@@ -52,10 +52,7 @@ export class FormMetadataComponent implements OnInit {
   AmountFinancingsforms:number = 1;
   AmountLinks:number = 1;
   Arr = Array;
-  
-  /* tags */
-  /* tags = [];
-  partners = []; */
+
 
   projectCredentials = {
     tags: [],
@@ -69,7 +66,6 @@ export class FormMetadataComponent implements OnInit {
     linkValidate: this.valueObject,
     profiles: [{profileId: this.authenticationService.profileId}]
   };
-// type MyArrayType = Array<{id: number, text: string}>;
 
 
   links = [];
@@ -107,8 +103,7 @@ export class FormMetadataComponent implements OnInit {
     this.sharedService.language.subscribe((val: string) => {
       this.language = val;
     });
-// projectCredentials.financingformValidate.validate
-    // this.projectCredentials = new Iproject();
+
     this.id = this.route.parent.snapshot.params.id;
     if(this.id){
       this.projectService.getProjectMetadataById(this.id).subscribe(
@@ -135,13 +130,10 @@ export class FormMetadataComponent implements OnInit {
           for(let i = 0; i < project.participants.length; i++) { this.participants.push(project.participants[i].participantId) }
           for(let i = 0; i < project.financingforms.length; i++) { this.financingforms.push(project.financingforms[i].financingformId) }
           if(project.participants.length == 0) { this.getParticipants(); }
-          // this.participants = [2];
-          // this.participants_type = [2];
 
           for(let i = 0; i < this.participants.length; i++) { this.changetype(this.participants[i], i, 'old')
           this.participants_type.push(project.participants[i].participant.typeParticipant)
-          // console.log('test:', project.participants[i].participant.typeParticipant)
-          // console.log('test:', this.participants_type)
+
           this.succes = "succes";
 
           this.editable_by.partners = this.parseJsonPartnerValidate.validate.editable_by; this.editable_by.partners.push(project.profileId)
@@ -175,7 +167,6 @@ export class FormMetadataComponent implements OnInit {
     this.typeService.getParticipants().subscribe(
       participants => { 
         this.participants_data = participants
-        // this.participants = participants
       })
   }
 
@@ -266,7 +257,6 @@ export class FormMetadataComponent implements OnInit {
     this.projectCredentials.linkValidate = JSON.stringify(this.projectCredentials.linkValidate);
 
     this.projectCredentials.links = []
-    console.log(this.links)
     for(let link of this.links){
       this.projectCredentials.links.push({ name: link });
     }
@@ -278,7 +268,6 @@ export class FormMetadataComponent implements OnInit {
     for(let participant of this.participants){
       this.projectCredentials.participants.push({ participantId: participant });
     }
-    console.log(this.projectCredentials)
     this.projectService.saveProjects(this.projectCredentials, 'metadata').subscribe(
       res => {
         this.projectCredentials.partnerValidate = JSON.parse(this.projectCredentials.partnerValidate.toString());
@@ -313,7 +302,6 @@ export class FormMetadataComponent implements OnInit {
     let credentials = { name: event.target.value};
     this.financingformService.postFinancingform(credentials).subscribe(
       res => {
-        console.log(res);
         this.getFinancingforms()
       },
       err => {
@@ -321,7 +309,6 @@ export class FormMetadataComponent implements OnInit {
         this.message.error = "Uw financieringsvorm is niet opgeslaan, gelieve opnieuw te proberen"
       }
     );
-    // this.financingforms_data.push(event)
   }
 
   addLink(event, i){

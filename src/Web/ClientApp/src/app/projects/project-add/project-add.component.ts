@@ -66,7 +66,3 @@ export class ProjectAddComponent implements OnInit {
     }
   }
 }
-
-/*
-<p *ngIf="project;else new">{{project.title}}</p>
-        <ng-template #new><p>Nieuw project</p></ng-template>*/

@@ -52,7 +52,6 @@ namespace Database
             builder.Entity<Project>()
               .Property(p => p._Title).HasColumnName("Title")
               .HasMaxLength(1000);
-//              .Ignore(p => p.Title);
 
             builder.Entity<Project>()
               .Property(p => p._Shorttitle).HasColumnName("Shorttitle")
@@ -99,12 +98,6 @@ namespace Database
                 .HasOne(s => s.Status)
                 .WithMany(p => p.Projects)
                 .HasForeignKey(s => s.StatusId);
-
-            /*
-            builder.Entity<Project>()
-                .HasOne(l => l.Profile)
-                .WithMany(l => l.Projects)
-                .HasForeignKey(l => l.ProfileId); */
             
             builder.Entity<Project>()
                 .Property(a => a.CreatedAt)
@@ -457,12 +450,7 @@ namespace Database
               .Property(t => t.Name)
               .HasMaxLength(255)
               .IsRequired();
-            
-           /* builder.Entity<Tag>()
-              .Property(t => t.Description)
-              .HasMaxLength(255)
-              .IsRequired();
-*/
+              
             builder.Entity<Tag>()
                 .HasOne(l => l.Project)
                 .WithMany(l => l.Tags)

@@ -35,7 +35,6 @@ export class NavMenuComponent implements OnInit{
       var googleTranslate = require('google-translate')(apiKey);
       
       googleTranslate.translate('My name is Brandon', 'es', function(err, translation) {
-        alert('test')
         console.log(translation);
         console.log(err)
         // =>  Mi nombre es Brandon

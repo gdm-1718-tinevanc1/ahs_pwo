@@ -16,7 +16,5 @@ export class NavSecondComponent implements OnInit {
 
   onChange($event){
     this.sharedService.setLanguage($event)
-
-    // this.sharedService.sharedNode.language = $event
   }
 }

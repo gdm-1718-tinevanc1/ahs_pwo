@@ -54,19 +54,6 @@ export class FormMediaComponent implements OnInit {
   
   sortImages(){
     var groupByName = {};
-    /* for(let i = 0; i < this.images.length; i++){
-      //alert('test1');
-      let self = this;
-      this.toDataUrl(this.images[i].image, function(myBase64) {
-        console.log(self.images)
-        // alert('test');
-        // console.log(this.images[i].image)
-        // console.log(myBase64); // myBase64 is the base64 string
-        // this.images[i].image = myBase64;
-        // console.log('test', this.images);
-      });
-    } */
-    // console.log(this.images)
    
     this.images.forEach(function (a) {
       groupByName [a.typeMedia] = groupByName [a.typeMedia] || [];
@@ -135,8 +122,6 @@ export class FormMediaComponent implements OnInit {
     if(this.iconSrc.image) this.credentials.mediums.push(this.iconSrc)
     for(var i = 0; i< this.extImageSrc.length; i++) this.credentials.mediums.push(this.extImageSrc[i])
 
-    console.log(this.credentials.mediums)
-    // this.extImageSrc.forEach(function (a) { this.credentials.mediums.push(a) });
     this.projectService.saveProjects(this.credentials, 'media').subscribe(
       res => {
         this.message.error =  '';

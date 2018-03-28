@@ -75,7 +75,6 @@ export class FormGeneralComponent implements OnInit {
     this.statusService.getStates().subscribe(
       states => {
         this.states = states;
-        console.log(this.states)
     })
 
     this.id = this.route.parent.snapshot.params.id;
@@ -122,7 +121,6 @@ export class FormGeneralComponent implements OnInit {
     this.projectCredentials.subtitle = JSON.stringify(this.projectCredentials.subtitle);
     this.projectCredentials.shorttitle = JSON.stringify(this.projectCredentials.shorttitle);
     this.projectCredentials.description = JSON.stringify(this.projectCredentials.description);
-    console.log(this.projectCredentials)
     this.projectService.saveProjects(this.projectCredentials, 'general').subscribe(
       res => {
         this.projectCredentials.title = JSON.parse(this.projectCredentials.title.toString());
@@ -146,42 +144,6 @@ export class FormGeneralComponent implements OnInit {
   }
 
   validate(){
-    /* var validates = [];
-    console.log(this.components.length)
-    this.components.forEach(validate => console.log(validate));
-    this.components.forEach(validate => validates.push(validate.validate));
-    // if(typeof this.projectCredentials === 'object'){
-
-      if(this.language === 'nl'){
-        this.projectCredentials.title.nl.validate = validates[0]
-        this.projectCredentials.shorttitle.nl.validate = validates[1]
-        this.projectCredentials.subtitle.nl.validate = validates[2]
-        this.projectCredentials.description.nl.validate = validates[3]  
-      } else{
-        this.projectCredentials.title.en.validate = validates[0]
-        this.projectCredentials.shorttitle.en.validate = validates[1] 
-        this.projectCredentials.subtitle.en.validate = validates[2]
-        this.projectCredentials.description.en.validate = validates[3] 
-      }
- */
-      /* 
-      if(this.language === 'nl'){
-        this.parseJsonTitle.nl.validate = validates[0]
-        this.parseJsonShorttitle.nl.validate = validates[1]
-        this.parseJsonSubtitle.nl.validate = validates[2]
-        this.parseJsonDescription.nl.validate = validates[3]  
-      } else{
-        this.parseJsonTitle.en.validate = validates[0]
-        this.parseJsonShorttitle.en.validate = validates[1]
-        this.parseJsonSubtitle.en.validate = validates[2]
-        this.parseJsonDescription.en.validate = validates[3] 
-      }
-      
-      this.projectCredentials.title = this.parseJsonTitle;
-      this.projectCredentials.shorttitle = this.parseJsonShorttitle;
-      this.projectCredentials.subtitle = this.parseJsonSubtitle;
-      this.projectCredentials.description = this.parseJsonDescription; */
-
       if(this.isAdmin){
         this.save();
       }

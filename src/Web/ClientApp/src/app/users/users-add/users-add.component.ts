@@ -71,7 +71,6 @@ export class UsersAddComponent implements OnInit {
       image: this.credentials.image
     }
 
-    console.log(credentials)
     this.profileService.postProfile(credentials).subscribe(
       res => {
         this.message.error =  '';
@@ -82,9 +81,6 @@ export class UsersAddComponent implements OnInit {
         this.message.succes = '';
         this.message.error = "Uw wijzigingen zijn niet opgeslaan, gelieve opnieuw te proberen" }
     );
-    // this.tasks.push(this.inputTask)
-
-
   }
 
 }

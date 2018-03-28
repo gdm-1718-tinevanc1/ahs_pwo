@@ -16,7 +16,6 @@ export class NavSearchProjectComponent implements OnInit {
   projects: Array<Iproject>;
   projectsList: Array<Iproject>;
   filterValue = '';
-  // test2 = 'ODC';
   constructor(private projectService:ProjectService, public http:Http) { }
 
   ngOnInit() {
@@ -51,19 +50,7 @@ export class NavSearchProjectComponent implements OnInit {
   }
 
  filter(event){
-   console.log(event)
-  console.log(event.value)
-  /* 
-  this.projects = this.projects.filter(
-    book => {
-      if (book.participants[0])
-      {
-        book.participants[0].participant.typeParticipant === "ODC";
-      }
-    }); */
-
     //status.name
-  // this.filter = 'financingforms[0].financingform.name';
   if(event.value == 'financingform'){
     this.projects = this.projectsList;
     let projects =[]; 

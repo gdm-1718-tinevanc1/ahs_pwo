@@ -101,8 +101,6 @@ $pwo-material-accent-palette:  mat-palette($mat-pwo-blue);
 $pwo-material-primary-palette-orange: mat-palette($mat-pwo-orange);
 $pwo-material-accent-palette-orange:  mat-palette($mat-pwo-orange);
 
-// $pwo-material-warn-palette:    mat-palette($warning-color);
 
-// Create the theme object (a Sass map containing all of the palettes).
 $pwo-material-theme_blue: mat-light-theme($pwo-material-primary-palette, $pwo-material-accent-palette);
 $pwo-material-theme_orange: mat-light-theme($pwo-material-primary-palette, $pwo-material-accent-palette);

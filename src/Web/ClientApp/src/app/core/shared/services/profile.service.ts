@@ -21,16 +21,8 @@ export class ProfileService {
 
   getProfileById(id: number) {
     return this._httpClient.get<Iprofile>(`${ this._apiEndPoint + '/' + id + '?withChildren=true'}`)
-      //.mapTo(projects => projects.find(project => project.id = id));
   }
 
-
-  /* saveProfiles (profile){
-    if (profile.id) {
-      return this.put(profile);
-    } 
-  }
-*/
 
   postProfile(profile) {
   let httpOptions = new Headers({

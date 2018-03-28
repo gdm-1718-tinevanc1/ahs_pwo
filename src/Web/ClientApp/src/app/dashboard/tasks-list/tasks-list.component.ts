@@ -53,10 +53,8 @@ export class TasksListComponent implements OnInit {
   }
   
   save() {
-    console.log(this.taskCredentials)
     this.tasksService.postTask(this.taskCredentials).subscribe(
       res => {
-        console.log(res);
         this.getTasks()
       },
       err => {
@@ -64,7 +62,6 @@ export class TasksListComponent implements OnInit {
         this.message.error = "Uw todo is niet opgeslaan, gelieve opnieuw te proberen"
       }
     );
-    // this.tasks.push(this.inputTask)
   }
 
 }

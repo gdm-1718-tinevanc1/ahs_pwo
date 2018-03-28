@@ -33,7 +33,6 @@ export class ProjectService {
 
   getProjectById(id: number) {
     return this._httpClient.get<Iproject>(`${ this._apiEndPoint + '/' + id + '?withChildren=true'}`)
-      //.mapTo(projects => projects.find(project => project.id = id));
   }
 
   getProjectGeneralById(id: number) {

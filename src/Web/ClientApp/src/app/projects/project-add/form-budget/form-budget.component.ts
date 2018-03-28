@@ -86,7 +86,6 @@ export class FormBudgetComponent implements OnInit {
   }
 
   public save() {
-    console.log(this.projectCredentials)
     this.projectCredentials.budgetValidate = JSON.stringify(this.projectCredentials.budgetValidate);
     this.projectService.saveProjects(this.projectCredentials, 'budget').subscribe(
       res => {
@@ -94,7 +93,6 @@ export class FormBudgetComponent implements OnInit {
         this.message.error =  '';
         this.message.succes =  "Uw wijzigingen zijn opgeslaan"
         setTimeout(()=>{ this.message.succes =  "" }, 3000);
-        console.log(this.projectCredentials)
         if(res){
           this.router.navigate(['/project', res.id, 'budget']);
         }
@@ -110,11 +108,6 @@ export class FormBudgetComponent implements OnInit {
   }
 
   validate(){
-    /* var validates = [];
-    this.components.forEach(validate => validates.push(validate.validate));
-    this.projectCredentials.budgetValidate.validate = validates[0]
-    console.log(this.projectCredentials.budgetValidate)
- */
     if(this.isAdmin){
       this.save();
     }

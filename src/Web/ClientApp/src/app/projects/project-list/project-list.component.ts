@@ -48,22 +48,4 @@ export class ProjectListComponent implements OnInit {
       err => console.log('err')
     )
   }
-
-  /* updateCheckedOptions(option, event) {
-    this.test = 'test' + event.source.value;
-    // this.selectedFilter = [1,2]
-    setTimeout(() => { if(event.source.checked == true){
-      // this.selectedFilter.push(parseInt(event.source.value))
-      this.selectedFilter = event.source.value
-      } else{
-        /* var index = this.selectedFilter.indexOf(parseInt(event.source.value));
-        if (index > -1) {
-          this.selectedFilter.splice(index, 1);
-        } */
-      /*   this.selectedFilter = null
-      }
-      console.log(this.selectedFilter)
-      alert(this.selectedFilter)
-    })
-  } */
 }

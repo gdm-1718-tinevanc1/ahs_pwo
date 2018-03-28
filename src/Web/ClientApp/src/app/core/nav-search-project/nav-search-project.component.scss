@@ -36,7 +36,6 @@ mat-expansion-panel-header{
  .nav-search-project{
     //display: table;
     height: 100%;
-    // background-color: red;
 }
  .image_nav{
     width: 100%;
@@ -44,64 +43,6 @@ mat-expansion-panel-header{
     
 } 
 
-/***************************************
-filter *********/
-
-/* Keep the nav menu independent of scrolling and on top of other items */
-/* .main-nav {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1;
-}
- */
-// @media (min-width: 768px) {
-    /* On small screens, convert the nav menu to a vertical sidebar */
-    /* .main-nav {
-        position: fixed;
-        max-height: 100vh;
-        overflow: scroll;
-        width: calc(20% - 20px);
-    }
-    .navbar {
-        border-radius: 0px;
-        border-width: 0px;
-        height: 100%;
-    }
-    .navbar-header {
-        float: none;
-    }
-    .navbar-collapse {
-        padding: 0px;
-    }
-    .navbar ul {
-        float: none;
-    }
-    .navbar li {
-        float: none;
-        font-size: 15px;
-        margin: 6px;
-    }
-    .navbar li a {
-        padding: 10px 16px;
-        border-radius: 4px;
-    }
-    .navbar a {
-        /* If a menu item's text is too long, truncate it */
-        /* width: 100%;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    } */ 
-// }
-
-
-/* .nav__angle{
-    float: right;
-    font-size: 2rem;
-}
- */
 .navbar-nav{
     list-style: none;
     margin: 0;
@@ -113,11 +54,6 @@ filter *********/
         margin-bottom: 3px;
         padding: 10px;
     }
-   /*  &>li>a:hover,
-    &>li>a:focus,
-    li.link-active a {
-        font-weight: bold;
-   } */
 } 
 
 // filter
@@ -129,86 +65,3 @@ filter *********/
 .navbar-nav{
     float:none;
 }
-
-/* .nav__filter{
-    .mat-radio-label-content{
-        color: $secondary-color;
-    }
-}
- */
-/* .navbar-inverse .navbar-toggle, .navbar-inverse{
-    border: none;
-}
- */
-/* .navbar-inverse{
-    min-height: 100vh;
-    background-color: $primary-color;
-} */
-/*navbar__header*/
-/* .navbar__header{
-    color: $white;
-    float: left;
-    height: 50px;
-    font-size: 18px;
-    line-height: 20px;
-    width: 100%;
-    padding-right: 26px;
-
-    &:focus {
-        outline: none;
-    }
-}
-
-.nav-bottom{
-    // position: fixed;
-    bottom: 0;
-   // width: calc(20% - 20px);
-} */
-/*nav__user*/ 
-/* .nav__user li{
-   background-color: $white;
-   &>a{
-    color: $primary-color
-   }
-} */
-
-/* .navbar__header{
-    .header__image{
-        height: 100%;
-        margin-top: -20px;
-    }
-    
-    .header__user{
-        text-transform: uppercase;
-        font-size: 1.5rem;
-        line-height: 4.7
-        ;
-        
-    }
-    
-    .nav__angle{
-        line-height: 3.5;
-    
-    }
-}
- */
-/*nav__project*/
-/* .nav__project li{
-    background-color: $secondary-color;
-    &>a{
-        color: $white;
-    }
-} */
-
-
-
-/* 
-label {
-    font-weight: normal !important;
-    color: red;
-}
-
-
-li .fa {
-    margin-right: 10px;
-}  */

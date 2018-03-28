@@ -12,7 +12,7 @@ export class ProjectsListComponent implements OnInit {
   searchText;
   p;
   dropdownExpaned: boolean = false;
-  projects: Array<Iproject>; // Array<Iproject>
+  projects: Array<Iproject>;
   states: {};
   statusValue = null;
   filterSelectRol1: boolean = false;

@@ -19,8 +19,6 @@ namespace Database
 
             builder.UseSqlServer("Server=tcp:ahs-pwo.database.windows.net,1433;Initial Catalog=pwoapp;Persist Security Info=False;User ID=ahspwo;Password=Artevelde_;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;");
 
-
-            // builder.EnableSensitiveDataLogging();
             return new ApplicationDbContext(builder.Options);
         }
     }

@@ -1,8 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-// import 'rxjs/add/operator/map';
 import {Observable} from "rxjs/Rx";
-// import 'rxjs/operators/map';
 import { Ifinancingform } from '../models/Ifinancingform';
 import { Ilink } from '../models/Ilink';
 import { Iparticipant } from '../models/Iparticipant';
@@ -12,7 +10,6 @@ import { environment } from '../../../../environments/environment';
 @Injectable()
 export class TypeService {
   private _apiEndPointFinancingforms = environment.ahsPwoAPI.url + environment.ahsPwoAPI.endPoints.financingforms;
-  // private _apiEndPointBudget = environment.ahsPwoAPI.url + environment.ahsPwoAPI.endPoints.budget;
   private _apiEndPointParticipants = environment.ahsPwoAPI.url + environment.ahsPwoAPI.endPoints.participants;
   private _apiEndPointParticipantsFilter = environment.ahsPwoAPI.url + environment.ahsPwoAPI.endPoints.participantsFilter;
   private _apiEndPointLinks = environment.ahsPwoAPI.url + environment.ahsPwoAPI.endPoints.links;

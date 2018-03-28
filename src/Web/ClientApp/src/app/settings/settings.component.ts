@@ -38,8 +38,6 @@ export class SettingsComponent implements OnInit {
     private translate: TranslateService) {}
 
   ngOnInit() {
-    console.log(this.credentials.setting.color)
-    console.log(this.credentials.setting.language)
     this.translate.setDefaultLang(this.credentials.setting.language);
 
     this.translate.get('Instellingen').subscribe((res: string) => {
@@ -101,8 +99,6 @@ export class SettingsComponent implements OnInit {
         "image": this.imageSrc
       } 
   
-      console.log(credentials)
-      // this.extImageSrc.forEach(function (a) { this.credentials.mediums.push(a) });
       this.profileService.updateProfile(credentials).subscribe(
         res => {
           this.message.error =  '';
@@ -118,7 +114,6 @@ export class SettingsComponent implements OnInit {
       );
     }
 
-    console.log(this.credentials)
     this.settingsService.saveSettings(this.credentials).subscribe(
       res => {
         this.message.error =  '';

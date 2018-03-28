@@ -6,7 +6,6 @@ namespace Models
 {
     public class Financingform: BaseEntity<Int16> 
     {
-        // [JsonIgnore] 
         public ICollection<ProjectFinancingform> Projects { get; set; }
 
     }

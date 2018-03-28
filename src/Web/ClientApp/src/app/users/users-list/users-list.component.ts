@@ -14,7 +14,6 @@ export class UsersListComponent implements OnInit {
   p;
   profiles = [];
   dropdownExpaned: boolean = false;
-  // filerSelectAll: boolean = false;
   filterSelectRol1: boolean = false;
   filterSelectRol2: boolean = false;
   filterSelectRol3: boolean = false;
@@ -40,8 +39,7 @@ export class UsersListComponent implements OnInit {
     this.pageTitleService.setSubTitle("")
     this.profileService.getProfiles().subscribe(
       result => { 
-        this.profiles = result
-        console.log(this.profiles) },
+        this.profiles = result },
       err => console.log('err')
     )
   }

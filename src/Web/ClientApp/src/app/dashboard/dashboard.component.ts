@@ -17,7 +17,6 @@ export class DashboardComponent implements OnInit {
   countProjects: number;
   countProfiles: number;
   countValidateProjects: number;
-  // countValidateProjects: number = 5;
  
 
   constructor(

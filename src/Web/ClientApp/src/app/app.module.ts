@@ -7,7 +7,6 @@ import { MaterialModule } from './core/material/material.module';
 import { AppRoutingModule } from './app-routing.module';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { NgxPaginationModule } from 'ngx-pagination';
-// import { translate } from 'angular-translate';
 
 /* Components */
 import { AppComponent } from './app.component';
@@ -43,8 +42,7 @@ import { OrderByPipe } from './shared/pipes/order-by.pipe';
     DashboardModule,
     SharedModule,
     AngularFontAwesomeModule,
-    NgxPaginationModule //,
-    // translate
+    NgxPaginationModule
   ],
   bootstrap: [AppComponent]
 })

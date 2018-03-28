@@ -9,10 +9,12 @@ import { SearchByPipe } from './pipes/search-by.pipe';
 import { SearchByMediatypePipe } from './pipes/search-by-mediatype.pipe';
 import { FilterByStatusPipe } from './pipes/filter-by-status.pipe';
 import { OrderByPipe } from './pipes/order-by.pipe';
+import { TransModule } from './pipes/translate/trans.module';
 
 @NgModule({
   imports: [
     CommonModule,
+    TransModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

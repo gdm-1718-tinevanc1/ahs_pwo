@@ -38,6 +38,8 @@ export class SettingsComponent implements OnInit {
     private translate: TranslateService) {}
 
   ngOnInit() {
+    console.log(this.credentials.setting.color)
+    console.log(this.credentials.setting.language)
     this.translate.setDefaultLang(this.credentials.setting.language);
 
     this.translate.get('Instellingen').subscribe((res: string) => {
@@ -46,12 +48,12 @@ export class SettingsComponent implements OnInit {
     this.pageTitleService.setSubTitle("")
     this.profileService.getProfileById(this.profileId).subscribe(
       result => { 
-        this.profile = result,
-        this.credentials.id = this.profile.id;
-        this.credentials.setting = this.profile.setting;
-        this.translate.setDefaultLang(this.credentials.setting.language);
-
-        console.log(this.credentials)
+        this.profile = result
+        if(this.profile.setting){
+          this.credentials.id = this.profile.id;
+          this.credentials.setting = this.profile.setting;
+          this.translate.setDefaultLang(this.credentials.setting.language);
+        }
       },
       err => console.log('err')
     )

@@ -19,7 +19,7 @@ export class TasksListComponent implements OnInit {
   taskCredentials = {
     name: '',
     projectId: null,
-    profileId: [{profileId: this.profileId}]
+    profileId: this.profileId
   }
   tasks: Array<Itask>;
   projects: Array<Iproject>

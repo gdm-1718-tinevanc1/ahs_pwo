@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient } from '@angular/common/http';
+import { TranslateComponent } from './translate.component';
 
 @NgModule({
   imports: [
@@ -15,7 +16,9 @@ import { HttpClient } from '@angular/common/http';
       }
     })
   ],
-  declarations: []
+  declarations: [
+    TranslateComponent
+  ]
 })
 export class TransModule { }
 
